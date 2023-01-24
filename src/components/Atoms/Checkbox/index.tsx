@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Checkbox } from '@mui/material';
 
 type Props = {
     checked?: boolean;
@@ -7,7 +7,9 @@ type Props = {
 
 const CheckBox = ({checked}: Props) => {
   return (
-    <CheckBox/>
+    
+    <Checkbox checked={checked} color={'primary'}/>
+    
   )
 }
 

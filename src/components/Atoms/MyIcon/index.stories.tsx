@@ -13,7 +13,8 @@ export default {
 const Template: ComponentStory<typeof MyIcon> = (args) => <MyIcon {...args} />;
 
 export const DashBoardIcon = Template.bind({})
-DashBoardIcon.args = {icon: 'dashboard',colour:'primary'}
+DashBoardIcon.args = {icon: 'dashboard',colour:'#224dff'} // HEX:
+
 
 export const candidatesIcon = Template.bind({})
 candidatesIcon.args = 

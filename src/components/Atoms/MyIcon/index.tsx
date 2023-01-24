@@ -40,7 +40,7 @@ type Props = {
   colour?: string;
 }
 
-const MyIcon = ({icon,colour}: Props) => {
+const MyIcon = ({icon,colour}: Props) => {  // <MyIcon {icon = 'dashboard',color='edo'}/>
 
   switch(icon){
   case 'dashboard':
