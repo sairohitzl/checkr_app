@@ -13,9 +13,14 @@ type Props = {
 const ButtonElement = (props: Props) => {
 
   const selectBackgroundColor = (variant : string) => {
-   return variant === "primary" ? "#224DFF"
-                        : variant === "secondary"
-                        ? "#FFFFFF" : "#1132B7"
+    if(variant === "primary") {
+        return "#224DFF";
+      }
+    else if(variant === "secondary"){
+        return "#FFFFFF"
+    }
+      
+    return "#1132B7"
   }
 
   return (
