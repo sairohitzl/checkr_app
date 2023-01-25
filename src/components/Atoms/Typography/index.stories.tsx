@@ -1,14 +1,14 @@
-import TypographyElement from ".";
+import Typography from ".";
 
 import { Story } from "@storybook/react";
 
 export default {
     title: "Atoms/Typography",
-    component: TypographyElement,
+    component: Typography,
   }  
 
-  const Template: Story<typeof TypographyElement> = (args) =>
-   (<TypographyElement {...args}>Typography</TypographyElement>);
+  const Template: Story<typeof Typography> = (args) =>
+   (<Typography {...args}>Typography</Typography>);
 
   export const Typography1 = Template.bind({})
   Typography1.args = {

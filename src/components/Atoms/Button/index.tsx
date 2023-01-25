@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button} from '@mui/material';
-import TypographyElement from '../Typography';
+import Typography from '../Typography';
 import theme from '../../../theme/theme'
 
 type Props = {
@@ -11,6 +11,13 @@ type Props = {
 }
 
 const ButtonElement = (props: Props) => {
+
+  const selectBackgroundColor = (variant : string) => {
+   return variant === "primary" ? "#224DFF"
+                        : variant === "secondary"
+                        ? "#FFFFFF" : "#1132B7"
+  }
+
   return (
     <Button
     onClick={props.onClick}
@@ -19,26 +26,19 @@ const ButtonElement = (props: Props) => {
         textTransform: "none",
         borderRadius: "6px",
         background:
-          props.variant === "primary"
-            ? "#224DFF"
-            : props.variant === "secondary"
-            ? "#FFFFFF"
-            : "#1132B7",
+        selectBackgroundColor(props.variant),
         border: props.variant === "secondary" ? "1px solid #E5E7ED" : "none",
         cursor: "pointer",
     }}>
-        <TypographyElement
+        <Typography
         variant="body1"
         color={
           props.variant == "secondary"
-            ? theme.palette.text.primary
-            : theme.palette.text.disabled
+           ? theme.palette.text.primary : theme.palette.text.disabled
         }
       >
         {props.label}
-      </TypographyElement>
-
-
+      </Typography>
     </Button>
   )
 }
