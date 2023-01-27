@@ -23,12 +23,26 @@ const ProfileTab = ({name,email}: Props) => {
           justifyContent: "space-evenly",
         }}
       >
-        <Typography variant="body1" color={theme.palette.text.primary}>
+        <Typography variant="body1" color={theme.palette.text.primary}
+        sx={{
+          fontWeight:500,
+          fontStyle:"normal",
+          lineHeight:"18px",
+
+        }}
+        >
           {name}
         </Typography>
         <Typography
           variant="caption2"
           color={theme.palette.other.secondary2}
+          sx={{
+            fontWeight:400,
+            fontStyle:"normal",
+            lineHeight:"18px",
+            fontSize:"12px"
+  
+          }}
         >
           {email}
         </Typography>
