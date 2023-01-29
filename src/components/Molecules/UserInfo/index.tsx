@@ -2,20 +2,21 @@ import { Box } from '@mui/material'
 import theme from '../../../theme/theme'
 import MyIcon from '../../Atoms/MyIcon'
 import Typography from '../../Atoms/Typography'
-type Props = {
-    title: string,
-    name: string,
-    icon: string,
+
+export type UserInfoProps= {
+    title: string;
+    name: string;
+    icon: string;
 }
 
-const UserInfo = ({title,name,icon}: Props) => {
+const UserInfo = ({title,name,icon}: UserInfoProps) => {
   return (
    <Box sx={{
     display : "flex",
     padding: "12px",
     background: "#FAFAFC",
-    width: "330px",
-    height: "68px",
+    // width: "330px",
+    // height: "68px",
     border: "1px solid #E5E7ED",
     borderRadius: "12px"
    }}>
@@ -38,8 +39,11 @@ const UserInfo = ({title,name,icon}: Props) => {
         justifyContent: "space-evenly",
         padding: "0px 0px 0px 12px",
       }}>
-        <Typography variant='body2' color={theme.palette.text.secondary}>{title}</Typography>
-        <Typography variant='body2' >{name}</Typography>
+        <Typography variant='body2' color={theme.palette.text.secondary} >{title}</Typography>
+        <Typography variant='body2' sx={{
+          fontWeight:500,
+          lineHeight: '20px',
+  }}>{name}</Typography> 
       </Box>
 
    </Box>
