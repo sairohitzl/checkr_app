@@ -107,7 +107,7 @@ const MyIcon = ({icon,colour}: Props) => {  // <MyIcon {icon = 'dashboard',color
   case 'package':
     return (<Inventory2Outlined sx={{color:colour}}/>)
     
-  case 'uparrow':
+  case 'upArrow':
     return (<KeyboardArrowUpOutlined sx={{color:colour}}/>)
   
   case 'clock':

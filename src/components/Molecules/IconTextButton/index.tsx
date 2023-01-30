@@ -4,7 +4,7 @@ import MyIcon from "../../Atoms/MyIcon"
 import Typography from "../../Atoms/Typography"
 
 
-type Props = {
+export type IconTextButtonProps = {
     icon:string,
     label:string,
     variant: "primary" | "secondary" | "hover";
@@ -12,13 +12,13 @@ type Props = {
 
 }
 
-const IconTextButton = ({...props}: Props) => {
-
+const IconTextButton = (props: IconTextButtonProps) => {
+      const {icon,label,variant,onClick} = props
   const selectBackgroundColor = (variant:string) => {
 
-    if(variant === "primary"){return "#224DFF"}
-    else if(variant === "secondary"){return "#FFFFFF"}
-    return "#1132B7"
+    if(variant === "primary"){return theme.palette.primary['500']}
+    else if(variant === "secondary"){return theme.palette.text.disabled}
+    return theme.palette.primary['600']
    }
 
 
@@ -26,15 +26,15 @@ const IconTextButton = ({...props}: Props) => {
     <Button sx={{
         padding: "8px 16px",
         textTransform: "none",
-        background: selectBackgroundColor(props.variant),
-        border: props.variant === "secondary" ? "1px solid #E5E7ED" : "none",
+        background: selectBackgroundColor(variant),
+        border: variant === "secondary" ? "1px solid #E5E7ED" : "none",
 
     }}
     startIcon={
         <MyIcon
-          icon={props.icon}
+          icon={icon}
           colour={
-            props.variant === "secondary"
+            variant === "secondary"
               ? theme.palette.other.icon1
               : theme.palette.other.white
           }
@@ -44,11 +44,11 @@ const IconTextButton = ({...props}: Props) => {
        <Typography
        variant="body1" 
        color={
-           props.variant === "secondary"
+           variant === "secondary"
            ? theme.palette.other.icon1
             : theme.palette.other.white
        }
-       >{props.label}</Typography>
+       >{label}</Typography>
         </Button>
 
   );

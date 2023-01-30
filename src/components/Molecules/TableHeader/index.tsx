@@ -2,7 +2,8 @@ import React from 'react'
 import Typography from '../../Atoms/Typography'
 import { TableCell,styled } from '@mui/material'
 import theme from '../../../theme/theme'
-export type MyTableHeadeProps = {
+
+export type MyTableHeaderProps = {
     leftAlign: boolean,
     text: string
 }
@@ -14,17 +15,18 @@ const RightAlignedDiv = styled("div")({
 
 
 
-const TableHeader = (props: MyTableHeadeProps) => {
+const TableHeader = (props: MyTableHeaderProps) => {
+    const {leftAlign,text} = props
   return (
     <TableCell align='left' sx={{backgroundColor: "#F7F8FA"}}>
-        {!props.leftAlign && 
+        {!leftAlign && 
         (<RightAlignedDiv>
             <Typography variant='caption1' color={theme.palette.text.secondary}>
-                {props.text}
+                {text}
                 </Typography>
             </RightAlignedDiv>)}
 
-{props.leftAlign && (<Typography variant='caption1' color={theme.palette.text.secondary}>{props.text}</Typography>)}
+{leftAlign && (<Typography variant='caption1' color={theme.palette.text.secondary}>{text}</Typography>)}
     </TableCell>
   );
 };

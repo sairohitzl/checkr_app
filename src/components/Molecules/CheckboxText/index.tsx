@@ -1,13 +1,14 @@
 import { Box } from "@mui/material"
 import CheckBox from "../../Atoms/Checkbox"
 import Typography from "../../Atoms/Typography"
-type Props = {
+import theme from "../../../theme/theme"
+type CheckboxTextProps = {
     checked : boolean,
     text: string
 }
 
-const CheckboxText = (props: Props) => {
-
+const CheckboxText = (props: CheckboxTextProps) => {
+  const {checked,text} = props
   const myStyle = {
     display: "flex",
     flexDirection: "row",
@@ -27,14 +28,14 @@ const CheckboxText = (props: Props) => {
     lineHeight: "20px",
     display: "flex",
     alignItems:'center',
-    color: '#696A6E'
+    color: theme.palette.text.secondary
 
   }
 
   return (
     <Box sx={{...myStyle}}>
-      <CheckBox checked={props.checked}/>
-      <Typography variant="body1" {...typoStyle}  >{props.text}</Typography>
+      <CheckBox checked={checked}/>
+      <Typography variant="body1" {...typoStyle}  >{text}</Typography>
       
     </Box>
   )

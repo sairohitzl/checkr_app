@@ -5,6 +5,7 @@ type Props = {
 }
 
 const CheckBox = ({checked}: Props) => {
+
   return (
     
     <Checkbox checked={checked} color={'primary'}/>

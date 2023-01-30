@@ -93,7 +93,7 @@ export const packageIcon = Template.bind({})
 packageIcon.args = {icon: 'package',colour:'primary'}
 
 export const uparrowIcon = Template.bind({})
-uparrowIcon.args = {icon: 'uparrow',colour:'primary'}
+uparrowIcon.args = {icon: 'upArrow',colour:'primary'}
 
 export const clockIcon = Template.bind({})
 clockIcon.args = {icon: 'clock',colour:'primary'}

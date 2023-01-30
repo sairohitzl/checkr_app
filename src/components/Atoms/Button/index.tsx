@@ -3,24 +3,24 @@ import {Button} from '@mui/material';
 import Typography from '../Typography';
 import theme from '../../../theme/theme'
 
-type Props = {
+export type ButtonProps = {
     label: string
     variant: 'primary' | 'hover' | 'secondary';
     icon?: string;
     onClick? : React.MouseEventHandler<HTMLButtonElement>; 
 }
 
-const ButtonElement = (props: Props) => {
+const ButtonElement = (props: ButtonProps) => {
 
   const selectBackgroundColor = (variant : string) => {
     if(variant === "primary") {
-        return "#224DFF";
+        return theme.palette.primary['500'];
       }
     else if(variant === "secondary"){
-        return "#FFFFFF"
+        return theme.palette.text.disabled;
     }
       
-    return "#1132B7"
+    return theme.palette.primary['600'];
   }
 
   return (

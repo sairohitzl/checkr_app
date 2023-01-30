@@ -9,7 +9,8 @@ type Props = {
     email:string
 }
 
-const ProfileTab = ({name,email}: Props) => {
+const ProfileTab = (props: Props) => {
+  const {name,email} = props
   return (
     <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
     <Box>

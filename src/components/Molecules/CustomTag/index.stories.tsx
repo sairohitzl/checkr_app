@@ -10,16 +10,16 @@ const Template: ComponentStory<typeof CustomTag> = (args) => (<CustomTag {...arg
 
 export const chip1 = Template.bind({})
 chip1.args = {
-    type: 1,
+    type: 'green',
     title: "CLEAR"
 }
 export const chip2 = Template.bind({})
 chip2.args = {
-    type: 2,
+    type: 'yellow',
     title: "CONSIDER"
 }
 export const chip3 = Template.bind({})
 chip3.args = {
-    type: 3,
+    type: 'blue',
     title: "SCHEDULED"
 }
