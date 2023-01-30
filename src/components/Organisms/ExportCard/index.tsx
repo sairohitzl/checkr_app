@@ -47,7 +47,7 @@ const ExportCard = (props: ExportCardProps) => {
     <ThemeProvider theme={theme}>
         <Box>
         <Box sx={{ padding: "16px" }}>
-            <Typography variant="subtitle1" >
+            <Typography variant="subtitle1"  fontWeight={"bold"}>
             Export Candidate Reports CSV
             </Typography>
         </Box>
@@ -78,7 +78,7 @@ const ExportCard = (props: ExportCardProps) => {
             <TextField
                 type={"date"}
                 sx={{ borderRadius: "4px" }}
-                size='small'
+    
                 fullWidth
                 defaultValue={"2017-05-24"}
                 InputProps={{
@@ -100,7 +100,7 @@ const ExportCard = (props: ExportCardProps) => {
                 sx={{
                   borderRadius: "4px",
                 }}
-                size='small'
+        
                 defaultValue={"2017-05-24"}
                 fullWidth
                 InputProps={{
