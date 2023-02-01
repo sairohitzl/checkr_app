@@ -18,14 +18,14 @@ const Template: ComponentStory<typeof PageHeader> = (args) => (
 // WithLeading.args = {
 //   leading: true,
 //   title: "Candidates",
-  
+
 // };
 export const WithActions = Template.bind({});
 WithActions.args = {
   title: "Candidates",
   actions: [
-    (<ButtonElement label="Pre adverse action" variant="secondary" />),
-    (<ButtonElement label="Engage" variant="primary" />)
+    <ButtonElement label="Pre adverse action" variant="secondary" />,
+    <ButtonElement label="Engage" variant="primary" />,
   ],
 };
 export const WithLeadingAndActions = Template.bind({});
@@ -33,8 +33,7 @@ WithLeadingAndActions.args = {
   leading: true,
   title: "Candidates",
   actions: [
-    (<IconTextButton icon="export" label="Export" variant="secondary"/>),
-    (<IconTextButton icon="add" label="Manual Order" variant="primary"/>)
-    
+    <IconTextButton icon="export" label="Export" variant="secondary" />,
+    <IconTextButton icon="add" label="Manual Order" variant="primary" />,
   ],
 };

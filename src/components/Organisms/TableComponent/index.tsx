@@ -1,45 +1,42 @@
-
 import {
-    Table,
-    TableBody,
-    TableContainer,
-    TableHead,
-    TableRow,
-  } from "@mui/material";
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
-import React,{useEffect,useState} from 'react';
-import TableHeader,{MyTableHeaderProps} from "../../Molecules/TableHeader";
-import CustomTableCell, {MyCellProps} from "../../Molecules/TableCell"
+import React, { useEffect, useState } from "react";
+import TableHeader, { MyTableHeaderProps } from "../../Molecules/TableHeader";
+import CustomTableCell, { MyCellProps } from "../../Molecules/TableCell";
 
 export type MyTableDataProps = {
-    headers: MyTableHeaderProps[];
-    body: MyCellProps[][];
-  };
+  headers: MyTableHeaderProps[];
+  body: MyCellProps[][];
+};
 
-  export type MyTableProps = {
-    data: MyTableDataProps;
-  };
-
-
+export type MyTableProps = {
+  data: MyTableDataProps;
+};
 
 const TableComponent = (props: MyTableProps) => {
-    const [rows, setRows] = useState<MyTableDataProps>(props.data);
+  const [rows, setRows] = useState<MyTableDataProps>(props.data);
 
-    useEffect(() => {
-        setRows(props.data);
-      }, [props.data]);
+  useEffect(() => {
+    setRows(props.data);
+  }, [props.data]);
 
   return (
     <TableContainer>
       <Table>
-      <TableHead>
-      <TableRow>
+        <TableHead>
+          <TableRow>
             {rows.headers.map((item) => (
               <TableHeader text={item.text} leftAlign={item.leftAlign} />
             ))}
           </TableRow>
-          </TableHead>
-          <TableBody>
+        </TableHead>
+        <TableBody>
           {rows.body.map((row) => (
             <TableRow>
               {row.map((item) => (
@@ -53,9 +50,9 @@ const TableComponent = (props: MyTableProps) => {
             </TableRow>
           ))}
         </TableBody>
-        </Table>
+      </Table>
     </TableContainer>
   );
 };
 
-export default TableComponent
+export default TableComponent;

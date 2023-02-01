@@ -18,10 +18,10 @@ import IconButton from "../../Molecules/IconButton";
 
 import FilterMenu from "../FilterMenu";
 
-type CustomTableHeaderProps={}
+type CustomTableHeaderProps = {};
 
-const CustomTableHeader = (props: CustomTableHeaderProps)=>{
-    const [filterval1, setFilterval1] = useState("");
+const CustomTableHeader = (props: CustomTableHeaderProps) => {
+  const [filterval1, setFilterval1] = useState("");
   const [filterval2, setFilterval2] = useState("");
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLButtonElement>(null);
@@ -51,10 +51,8 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
         justifyContent: "space-between",
       }}
     >
-        <Box>
-        <Typography variant={"subtitle1"}>
-          Candidates
-        </Typography>
+      <Box>
+        <Typography variant={"subtitle1"}>Candidates</Typography>
       </Box>
       <Box
         sx={{
@@ -64,7 +62,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
           columnGap: 1,
         }}
       >
-         <GridToolbarQuickFilter
+        <GridToolbarQuickFilter
           placeholder="Search any candidate"
           sx={{
             border: "1px solid #E5E7ED",
@@ -96,7 +94,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
             borderRadius: "4px",
           }}
         >
-            <Typography>Filter</Typography>
+          <Typography>Filter</Typography>
         </Button>
         <Popper
           open={open}
@@ -108,8 +106,8 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
           sx={{
             zIndex: 1,
           }}
-        >  
-        {({ TransitionProps, placement }) => (
+        >
+          {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{
@@ -117,7 +115,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
                   placement === "bottom-start" ? "left top" : "left bottom",
               }}
             >
-                <Paper elevation={2}>
+              <Paper elevation={2}>
                 <ClickAwayListener onClickAway={handleClose}>
                   <FilterMenu
                     setFilter={apiRef.current.setFilterModel}
@@ -129,15 +127,14 @@ const CustomTableHeader = (props: CustomTableHeaderProps)=>{
                 </ClickAwayListener>
               </Paper>
             </Grow>
-        )}
+          )}
         </Popper>
         <Box sx={{ border: "1px solid #E5E7ED", borderRadius: "4px" }}>
           <IconButton icon={"More"} variant={"secondary"} />
         </Box>
       </Box>
-      </Box>
+    </Box>
   );
-
 };
 
-export default CustomTableHeader
+export default CustomTableHeader;

@@ -12,13 +12,13 @@ import CheckboxText from "../../Molecules/CheckboxText";
 
 type MailTemplateProps = {
   candidate: CandidateType;
-  openAdverse: boolean,
-  handleClose: () => void,
-  charges: (string | boolean)[][]
+  openAdverse: boolean;
+  handleClose: () => void;
+  charges: (string | boolean)[][];
 };
 
 const MailTemplate = (props: MailTemplateProps) => {
-    const {candidate} = props
+  const { candidate } = props;
   const [open, setOpen] = useState<boolean>(false);
   const handleClose = () => setOpen(false);
   const charges = useRef([
@@ -46,38 +46,24 @@ const MailTemplate = (props: MailTemplateProps) => {
         }}
       >
         <Grid container sx={{ padding: "20px" }} columnGap={0.5}>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.primary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.primary}>
             From:
           </Typography>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             james.rodriguez@checkr.com
           </Typography>
         </Grid>
         <Divider style={{ width: "100%" }} />
         <Grid container sx={{ padding: "20px" }} columnGap={0.5}>
           <Typography variant={"caption1"}>To: </Typography>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             {props.candidate?.email ?? "john.smith@checkr.com"}
           </Typography>
         </Grid>
         <Divider style={{ width: "100%", color: "#E5E7ED" }} />
         <Grid container sx={{ padding: "20px" }} columnGap={0.5}>
-          <Typography variant={"caption1"}>
-            Subject:
-          </Typography>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"}>Subject:</Typography>
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             Pre-adverse action notice - checkr-bpo
           </Typography>
         </Grid>
@@ -87,24 +73,15 @@ const MailTemplate = (props: MailTemplateProps) => {
           sx={{ paddingTop: "20px", paddingLeft: "20px" }}
           columnGap={0.5}
         >
-          <Typography
-            variant={"body2"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"body2"} color={theme.palette.text.secondary}>
             {"Dear "}
           </Typography>
-          <Typography
-            variant={"body2"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"body2"} color={theme.palette.text.secondary}>
             {props.candidate?.name ?? "John Smith"}
           </Typography>
         </Grid>
         <Grid container sx={{ paddingTop: "10px", paddingLeft: "20px" }} xs={8}>
-          <Typography
-            variant={"body2"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"body2"} color={theme.palette.text.secondary}>
             You recently authorized checkr-bpo (“the company”) to obtain
             consumer reports and/or invistigate consumer reportsabout you from a
             consumer reporting agency. The Company is considering taking action
@@ -114,10 +91,7 @@ const MailTemplate = (props: MailTemplateProps) => {
           </Typography>
         </Grid>
         <Grid container sx={{ paddingTop: "10px", paddingLeft: "20px" }}>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.primary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.primary}>
             Select the charges for the pre adverse action
           </Typography>
         </Grid>
@@ -134,15 +108,16 @@ const MailTemplate = (props: MailTemplateProps) => {
             >
               {charge.toString()}
             </Typography> */}
-            <CheckboxText onClick={() => handleCheckBoxClick(index)} variant={"caption2"}  text={charge.toString()} />
+            <CheckboxText
+              onClick={() => handleCheckBoxClick(index)}
+              variant={"caption2"}
+              text={charge.toString()}
+            />
           </Grid>
         ))}
 
         <Grid container sx={{ paddingTop: "24px", paddingLeft: "20px" }} xs={8}>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             If you wish to dispute the accuracy of the information in the report
             directly with the consumer reporting agency (i.e., the source of the
             informationcontained in the report), you should contact the agency
@@ -150,10 +125,7 @@ const MailTemplate = (props: MailTemplateProps) => {
           </Typography>
         </Grid>
         <Grid container sx={{ paddingTop: "20px", paddingLeft: "20px" }}>
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             Sincerely,
           </Typography>
         </Grid>
@@ -161,10 +133,7 @@ const MailTemplate = (props: MailTemplateProps) => {
           container
           sx={{ paddingTop: "4px", paddingLeft: "20px", paddingBottom: "40px" }}
         >
-          <Typography
-            variant={"caption1"}
-            color={theme.palette.text.secondary}
-          >
+          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
             Checkr-bpo
           </Typography>
         </Grid>

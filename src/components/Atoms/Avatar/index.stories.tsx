@@ -1,13 +1,14 @@
 import ProfileAvatar from ".";
 
-import { ComponentStory,ComponentMeta } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-export default{
-    title: "Atoms/Avatar",
-    component: ProfileAvatar,
-} as ComponentMeta<typeof ProfileAvatar>
+export default {
+  title: "Atoms/Avatar",
+  component: ProfileAvatar,
+} as ComponentMeta<typeof ProfileAvatar>;
 
-const Template: ComponentStory<typeof ProfileAvatar> = (args) => <ProfileAvatar {...args} />;
+const Template: ComponentStory<typeof ProfileAvatar> = (args) => (
+  <ProfileAvatar {...args} />
+);
 
-export const ProfilePic  = Template.bind({});
-    
+export const ProfilePic = Template.bind({});

@@ -8,22 +8,22 @@ import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 type AdverseModalProps = {
-    open: boolean;
-    handleClose: () => void;
-    candidate: CandidateType;
-    charges: (string | boolean)[][];
-  };
+  open: boolean;
+  handleClose: () => void;
+  candidate: CandidateType;
+  charges: (string | boolean)[][];
+};
 
-  const AdverseModal = (props: AdverseModalProps)=>{
-    //let navigate: NavigateFunction = useNavigate();
-    return (
-        <Dialog
-          open={props.open}
-          onClose={props.handleClose}
-          fullWidth
-          maxWidth="md"
-        >
-            <Box
+const AdverseModal = (props: AdverseModalProps) => {
+  //let navigate: NavigateFunction = useNavigate();
+  return (
+    <Dialog
+      open={props.open}
+      onClose={props.handleClose}
+      fullWidth
+      maxWidth="md"
+    >
+      <Box
         sx={{
           backgroundColor: theme.palette.other.white,
           borderRadius: "6px",
@@ -36,17 +36,15 @@ type AdverseModalProps = {
             padding: "16px 20px",
           }}
         >
-       <Typography
-       variant={"caption2"}
-       color={theme.palette.text.primary}>
-        Pre-Adverse Action Notice
-       </Typography>
-       <Box onClick={props.handleClose}>
-        <MyIcon icon="close"/>
-       </Box>
-       </Box>
-       <Divider />
-       <Box
+          <Typography variant={"caption2"} color={theme.palette.text.primary}>
+            Pre-Adverse Action Notice
+          </Typography>
+          <Box onClick={props.handleClose}>
+            <MyIcon icon="close" />
+          </Box>
+        </Box>
+        <Divider />
+        <Box
           sx={{
             display: "flex",
             justifyContent: "space-evenly",
@@ -55,11 +53,8 @@ type AdverseModalProps = {
             padding: "16px 20px",
           }}
         >
-            <Box>
-            <Typography
-              variant={"caption1"}
-              color={theme.palette.text.primary}
-            >
+          <Box>
+            <Typography variant={"caption1"} color={theme.palette.text.primary}>
               From:
             </Typography>
             <Typography
@@ -79,9 +74,7 @@ type AdverseModalProps = {
             </Typography>
           </Box>
           <Box>
-            <Typography variant={"caption1"}>
-              Subject:
-            </Typography>
+            <Typography variant={"caption1"}>Subject:</Typography>
             <Typography
               variant={"caption1"}
               color={theme.palette.text.secondary}
@@ -118,9 +111,8 @@ type AdverseModalProps = {
                 Please carefully review the list of charges (in bold) and your
                 contact information.
               </Typography>
-
-        </Box>
-        <Box
+            </Box>
+            <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -235,7 +227,7 @@ type AdverseModalProps = {
                 columnGap: 1,
               }}
             >
-                <MyIcon icon={"attachment"} />
+              <MyIcon icon={"attachment"} />
               <Typography
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
@@ -268,18 +260,17 @@ type AdverseModalProps = {
             padding: "16px 20px",
           }}
         >
-            <ButtonElement
+          <ButtonElement
             label={"Submit Notice"}
             variant={"primary"}
             onClick={() => {
-            //   setAdverseAction(props.candidate);
-            //   navigate("/");
+              //   setAdverseAction(props.candidate);
+              //   navigate("/");
             }}
           />
         </Box>
-        </Box>
-        </Dialog>
-    );
-  };
-  export default AdverseModal
-  
+      </Box>
+    </Dialog>
+  );
+};
+export default AdverseModal;

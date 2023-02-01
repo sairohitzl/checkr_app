@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import CandidateTable from ".";
 
-
 export default {
   title: "Organisms/CandidateTable",
   component: CandidateTable,
@@ -14,4 +13,3 @@ const Template: ComponentStory<typeof CandidateTable> = (args) => (
 // table.args = {
 
 // }
-

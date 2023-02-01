@@ -123,9 +123,7 @@ const FilterMenu = (props: FilterMenuProps) => {
               />
             </Item>
             <Item>
-              <Typography variant="caption2">
-                {item.text}
-              </Typography>
+              <Typography variant="caption2">{item.text}</Typography>
             </Item>
           </Stack>
         ))}
@@ -148,9 +146,7 @@ const FilterMenu = (props: FilterMenuProps) => {
               />
             </Item>
             <Item>
-              <Typography variant="caption2">
-                {item.text}
-              </Typography>
+              <Typography variant="caption2">{item.text}</Typography>
             </Item>
           </Stack>
         ))}
