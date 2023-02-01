@@ -2,28 +2,31 @@ import React from 'react'
 import { Box } from '@mui/material'
 import MyIcon from '../../Atoms/MyIcon'
 import Typography from '../../Atoms/Typography'
-type Props = {
+import theme from '../../../theme/theme'
+
+export type IconTextProps = {
     icon: string
     title: string
     active?: boolean;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const IconText = ({icon,title,active,onClick}: Props) => {
+const IconText = (props: IconTextProps) => {
+  const {icon,title,active=false,onClick} = props
   return (
-    <Box onClick={()=> onClick} 
+    <Box onClick={()=>onClick}
       style={{
         padding: "12px",
-        background: active? "#EFF2FF" : "#FFFFFF",
+        background: active? theme.palette.primary['200'] : theme.palette.text.disabled,
         borderRadius: "6px",
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center"
       }}>
-    <MyIcon  icon={icon} colour="#224DFF" ></MyIcon>{" "}
+    <MyIcon  icon={icon} colour={theme.palette.primary['500']} ></MyIcon>
     <span
     style={{
-        color: active ? "blue" : "#2C2C2E",
+        color: active ? theme.palette.accent.blue : theme.palette.text.primary,
         paddingLeft: "10px",
       }} >
         <Typography variant='body1'>{title}</Typography>

@@ -3,13 +3,15 @@ import theme from '../../../theme/theme'
 import MyIcon from '../../Atoms/MyIcon'
 import Typography from '../../Atoms/Typography'
 
+
 export type UserInfoProps= {
     title: string;
     name: string;
     icon: string;
 }
 
-const UserInfo = ({title,name,icon}: UserInfoProps) => {
+const UserInfo = (props: UserInfoProps) => {
+    const {title,name,icon} = props
   return (
    <Box sx={{
     display : "flex",
@@ -24,12 +26,12 @@ const UserInfo = ({title,name,icon}: UserInfoProps) => {
         sx={{
           padding: "14px",
           borderRadius: "12px",
-          background: "#FFFFFF",
+          background: theme.palette.text.disabled,
           border: "1px solid #E5E7ED",
          
         }}
       >
-        <MyIcon icon={icon} colour="#95AAFF" />
+        <MyIcon icon={icon} colour={theme.palette.primary['400']} />
       </Box>
 
       <Box sx={{

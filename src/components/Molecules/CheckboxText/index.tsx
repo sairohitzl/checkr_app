@@ -1,13 +1,18 @@
 import { Box } from "@mui/material"
 import CheckBox from "../../Atoms/Checkbox"
 import Typography from "../../Atoms/Typography"
-type Props = {
-    checked : boolean,
+import theme from "../../../theme/theme"
+import { SyntheticEvent } from "react"
+type CheckboxTextProps = {
+    checked? : boolean,
     text: string
+    onClick?: ()=>void
+    onChange?: ()=>void
+    variant: "button" | "caption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "inherit" | "subtitle1" | "subtitle2" | "body1" | "body2" | "overline" | "caption1" | "caption2" | undefined
 }
 
-const CheckboxText = (props: Props) => {
-
+const CheckboxText = (props: CheckboxTextProps) => {
+  const {checked,text,variant,onClick,onChange} = props
   const myStyle = {
     display: "flex",
     flexDirection: "row",
@@ -27,14 +32,14 @@ const CheckboxText = (props: Props) => {
     lineHeight: "20px",
     display: "flex",
     alignItems:'center',
-    color: '#696A6E'
+    color: theme.palette.text.secondary
 
   }
 
   return (
     <Box sx={{...myStyle}}>
-      <CheckBox checked={props.checked}/>
-      <Typography variant="body1" {...typoStyle}  >{props.text}</Typography>
+      <CheckBox checked={checked} onClick={onClick} />
+      <Typography variant={variant} {...typoStyle}  >{text}</Typography>
       
     </Box>
   )

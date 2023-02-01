@@ -1,18 +1,19 @@
-import { TypographyProps } from '@mui/material'
+import { TypographyProps as MuiTypographyProps } from '@mui/material'
 import {Typography as MuiTypography } from '@mui/material'
 
 
-interface Props extends TypographyProps{
+interface TypographyProps extends MuiTypographyProps{
     children?:string
 }
 
-const Typography = (props: Props) => {
+const Typography = (props: TypographyProps) => {
     const {children,variant,align,color,gutterBottom, ...rest} = props;
   return (
     <MuiTypography 
     variant={variant}
     align={align}
     color={color}
+    fontFamily='Inter'
     {...rest}
     >
      {children}   

@@ -28,7 +28,7 @@ export const status = Template.bind({})
 status.args = {
     text: "clear",
     variant: "status",
-    statustype: 1,
+    statustype: 'green',
 }
 
 export const normaltext = Template.bind({})

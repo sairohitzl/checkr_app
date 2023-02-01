@@ -1,29 +1,29 @@
 import theme from '../../../theme/theme'
 import Typography from '../../Atoms/Typography'
 type Props = {
-    type: 1 | 2 | 3
+    type: 'green' | 'yellow' | 'blue'
     title: string
 } 
 
-const CustomTag = ({type,title}: Props) => {
-
+const CustomTag = (props: Props) => {
+    const {type,title} = props
     let tagStyle : object = {}
     let color : string
 
     switch(type){
-        case 1:
+        case 'green':
             tagStyle = {
                 backgroundColor: theme.palette.accent.lightGreen
             };
             color = theme.palette.accent.green
             break
-        case 2:
+        case 'yellow':
             tagStyle = {
                 backgroundColor: theme.palette.accent.lightYellow
             };
             color = theme.palette.accent.yellow
             break
-        case 3:
+        case 'blue':
             tagStyle = {
                 backgroundColor: theme.palette.accent.lightBlue
             };
@@ -44,7 +44,7 @@ const CustomTag = ({type,title}: Props) => {
 
   return (
     <span style={tagStyle}>
-        <Typography variant='caption1' color={color}>{title}</Typography>
+        <Typography variant='overline' color={color}>{title}</Typography>
     </span>
   );
 };

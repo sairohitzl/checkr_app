@@ -7,8 +7,9 @@ export type MyCellProps = {
  
     variant : "text" | "interactivetext" | "date" | "status" ,
     text: string,
-    statustype?: 1 | 2 | 3,
+    statustype?: 'green' | 'yellow' | 'green',
     onClick?: ()=>void,
+    itemId?: number;
 
 
 }
@@ -19,12 +20,12 @@ const RightAlignedDiv = styled("div")({
   });
 
 const CustomTableCell = (props: MyCellProps) => {
-
+    const {variant,text,statustype,onClick,itemId} = props
     const myStyle = {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: theme.palette.text.disabled,
       };
 
-      switch(props.variant){
+      switch(variant){
         case 'interactivetext':
             return (
                 <TableCell
@@ -34,7 +35,7 @@ const CustomTableCell = (props: MyCellProps) => {
                         variant="body2"
                         color={theme.palette.primary["500"]}
                     >
-                        {props.text}
+                        {text}
                         </Typography>
                 </TableCell>
             );
@@ -43,7 +44,7 @@ const CustomTableCell = (props: MyCellProps) => {
             return (
                 <TableCell align="left" sx={myStyle}>
                     <Typography variant="body2" color={theme.palette.text.primary}>
-                        {props.text}
+                        {text}
                     </Typography>
                 </TableCell>
             );
@@ -53,7 +54,7 @@ const CustomTableCell = (props: MyCellProps) => {
                 <TableCell align='left' sx={myStyle}>
                     <RightAlignedDiv>
                     <Typography variant="body2" color={theme.palette.text.primary}>
-                        {props.text}
+                        {text}
                     </Typography>
                     </RightAlignedDiv>
                 </TableCell>
@@ -61,7 +62,7 @@ const CustomTableCell = (props: MyCellProps) => {
         case 'status':
             return (
                 <TableCell align="left" sx={myStyle}>
-                    <CustomTag title={props.text} type={props.statustype!} />
+                    <CustomTag title={text} type={statustype!} />
                 </TableCell>
             );
         
@@ -69,7 +70,7 @@ const CustomTableCell = (props: MyCellProps) => {
             return (
             <TableCell align='left'>
                 <Typography variant='body2' color={theme.palette.text.primary}>
-                        {props.text}
+                        {text}
                 </Typography>
             </TableCell>
             );

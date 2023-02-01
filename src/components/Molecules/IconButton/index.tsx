@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import MyIcon from '../../Atoms/MyIcon'
+import theme from '../../../theme/theme'
 type Props = {
     icon : string
     variant : "primary" | "secondary" | "hover"
@@ -8,25 +9,25 @@ type Props = {
 }
 
 const IconButton = (props: Props) => {
-
+    const {icon,variant,onClick} = props
   const selectBackgroundColor = (variant:string) => {
 
     if(variant === "primary"){
-      return "#224DFF"
+      return theme.palette.primary['500']
     }
     else if(variant === "secondary"){
-      return "#FFFFFF"
+      return theme.palette.text.disabled
     }
-    return "#1132B7"
+    return theme.palette.primary['600']
   }
 
   return (
-    <Button onClick={props.onClick} style={{
+    <Button onClick={onClick} style={{
         textTransform: 'none',
         background: 
-            selectBackgroundColor(props.variant),
+            selectBackgroundColor(variant),
          }}>
-            <MyIcon icon={props.icon} colour={props.variant == "secondary" ? "#696A6E": "#FFFFFF" } />
+            <MyIcon icon={icon} colour={variant == "secondary" ? "#696A6E": "#FFFFFF" } />
          </Button>
   );
 };
