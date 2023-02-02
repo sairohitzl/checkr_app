@@ -9,6 +9,7 @@ import CustomTag from "../../Molecules/CustomTag";
 import CustomTableHeader from "../CustomTableHeader";
 import CustomTableFooter from "../CustomTableFooter";
 import { candidatesTableList } from "../../../utils/constants";
+import { getCandidates } from "../../../utils/service";
 
 type CandidateTableProps = {};
 
@@ -16,9 +17,14 @@ const CandidateTable = (props: CandidateTableProps) => {
   //const navigate = useNavigate();
   const [pageSize, setPageSize] = React.useState<number>(10);
   const [candidatesList, setcandidatesList] = useState<CandidateType[]>([]);
+
   useEffect(() => {
-    setcandidatesList(candidatesTableList);
+    getCandidates().then((res) => setcandidatesList(res));
   }, []);
+
+  // useEffect(() => {
+  //   setcandidatesList(candidatesTableList);
+  // }, []);
 
   return (
     <Box sx={{ height: "700px", width: "100%" }}>
@@ -35,14 +41,12 @@ const CandidateTable = (props: CandidateTableProps) => {
             backgroundColor: theme.palette.primary["100"],
           },
         }}
-        components={
-          {
-            // Footer: CustomTableFooter,
-            // Header: CustomTableHeader,
-          }
-        }
-        //   pageSize={pageSize}
-        //   onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        components={{
+          Footer: CustomTableFooter,
+          Header: CustomTableHeader,
+        }}
+        pageSize={pageSize}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         hideFooterPagination
         columns={[
           {
@@ -56,6 +60,7 @@ const CandidateTable = (props: CandidateTableProps) => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
@@ -66,6 +71,7 @@ const CandidateTable = (props: CandidateTableProps) => {
                 <Box sx={{ cursor: "pointer" }} onClick={() => {}}>
                   <Typography
                     variant="body2"
+                    fontWeight={400}
                     color={theme.palette.primary["500"]}
                   >
                     {params.value.toString()}
@@ -85,6 +91,7 @@ const CandidateTable = (props: CandidateTableProps) => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
@@ -137,13 +144,18 @@ const CandidateTable = (props: CandidateTableProps) => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
               );
             },
             renderCell(params) {
-              return <Typography>{params.value}</Typography>;
+              return (
+                <Typography fontWeight={400} variant="body2">
+                  {params.value}
+                </Typography>
+              );
             },
           },
           {
@@ -159,13 +171,18 @@ const CandidateTable = (props: CandidateTableProps) => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
               );
             },
             renderCell(params) {
-              return <Typography>{params.value}</Typography>;
+              return (
+                <Typography fontWeight={400} variant="body2">
+                  {params.value}
+                </Typography>
+              );
             },
           },
         ]}

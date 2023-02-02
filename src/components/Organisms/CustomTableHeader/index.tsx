@@ -130,7 +130,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps) => {
           )}
         </Popper>
         <Box sx={{ border: "1px solid #E5E7ED", borderRadius: "4px" }}>
-          <IconButton icon={"More"} variant={"secondary"} />
+          <IconButton icon={"more"} variant={"secondary"} />
         </Box>
       </Box>
     </Box>

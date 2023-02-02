@@ -30,7 +30,7 @@ export const userReportData: UserInfoProps[] = [
 
 export const menuItems: IconTextProps[] = [
   { title: "Home", active: false, icon: "dashboard" },
-  { title: "Candidates", active: true, icon: "contacts" },
+  { title: "Candidates", active: true, icon: "candidates" },
   { title: "Adverse Actions", active: false, icon: "hammer2" },
   { title: "Logs", active: false, icon: "logs" },
   { title: "Analytics", active: false, icon: "analytics" },
