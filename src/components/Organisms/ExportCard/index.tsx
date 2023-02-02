@@ -23,8 +23,6 @@ type ExportCardProps = {
   handleClose: () => void;
 };
 
-type Props = {};
-
 const ExportCard = (props: ExportCardProps) => {
   const [value1, setValue1] = React.useState<Dayjs | null>(
     dayjs("2016-07-18T21:08:54")

@@ -20,9 +20,7 @@ import React from "react";
 import { Item } from "semantic-ui-react";
 import theme from "../../../theme/theme";
 
-type CustomTableFooterProps = {};
-
-const CustomTableFooter = (props: CustomTableFooterProps) => {
+const CustomTableFooter = () => {
   const apiRef = useGridApiContext();
   const page = useGridSelector(apiRef, gridPageSelector);
   const pageCount = useGridSelector(apiRef, gridPageCountSelector);

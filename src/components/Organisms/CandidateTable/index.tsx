@@ -13,7 +13,6 @@ import { candidatesTableList } from "../../../utils/constants";
 type CandidateTableProps = {};
 
 const CandidateTable = (props: CandidateTableProps) => {
-  //const navigate = useNavigate();
   const [pageSize, setPageSize] = React.useState<number>(10);
   const [candidatesList, setcandidatesList] = useState<CandidateType[]>([]);
   useEffect(() => {
@@ -35,15 +34,12 @@ const CandidateTable = (props: CandidateTableProps) => {
             backgroundColor: theme.palette.primary["100"],
           },
         }}
-        components={
-          {
-            // Footer: CustomTableFooter,
-            // Header: CustomTableHeader,
-          }
-        }
-        //   pageSize={pageSize}
-        //   onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        hideFooterPagination
+        components={{
+          Footer: CustomTableFooter,
+          Header: CustomTableHeader,
+        }}
+        pageSize={pageSize}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         columns={[
           {
             field: "name",

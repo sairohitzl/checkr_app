@@ -29,7 +29,10 @@ const ButtonElement = (props: ButtonProps) => {
         textTransform: "none",
         borderRadius: "6px",
         background: selectBackgroundColor(props.variant),
-        border: props.variant === "secondary" ? "1px solid #E5E7ED" : "none",
+        border:
+          props.variant === "secondary"
+            ? `1px solid ${theme.palette.other.stroke}`
+            : "none",
         cursor: "pointer",
       }}
     >

@@ -129,7 +129,12 @@ const CustomTableHeader = (props: CustomTableHeaderProps) => {
             </Grow>
           )}
         </Popper>
-        <Box sx={{ border: "1px solid #E5E7ED", borderRadius: "4px" }}>
+        <Box
+          sx={{
+            border: `1px solid ${theme.palette.other.stroke} `,
+            borderRadius: "4px",
+          }}
+        >
           <IconButton icon={"More"} variant={"secondary"} />
         </Box>
       </Box>

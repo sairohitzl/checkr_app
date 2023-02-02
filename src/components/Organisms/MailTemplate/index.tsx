@@ -101,13 +101,6 @@ const MailTemplate = (props: MailTemplateProps) => {
             sx={{ paddingTop: "12px", paddingLeft: "20px" }}
             columnGap={1}
           >
-            {/* <CheckBox onClick={() => handleCheckBoxClick(index)} />
-            <Typography
-              variant={"caption2"}
-              color={theme.palette.text.secondary}
-            >
-              {charge.toString()}
-            </Typography> */}
             <CheckboxText
               onClick={() => handleCheckBoxClick(index)}
               variant={"caption2"}
@@ -141,7 +134,6 @@ const MailTemplate = (props: MailTemplateProps) => {
         <Grid container xs={12} sx={{ padding: "20px" }} alignContent="center">
           <Grid container xs={4}>
             <Grid container alignItems={"center"}>
-              {"  "}
               <Stack direction={"row"} spacing={1} alignItems={"center"}>
                 <Item>
                   <Typography
@@ -163,7 +155,6 @@ const MailTemplate = (props: MailTemplateProps) => {
                   </Typography>
                 </Item>
               </Stack>
-              {"  "}
             </Grid>
           </Grid>
           <Grid item xs={6}></Grid>

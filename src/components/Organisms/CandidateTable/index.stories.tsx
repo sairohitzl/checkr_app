@@ -9,7 +9,3 @@ export default {
 const Template: ComponentStory<typeof CandidateTable> = (args) => (
   <CandidateTable {...args} />
 );
-// export const table = Template.bind({});
-// table.args = {
-
-// }

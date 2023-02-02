@@ -6,7 +6,7 @@ import Typography from "../../Atoms/Typography";
 import MyIcon from "../../Atoms/MyIcon";
 import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-
+import { randomStrings } from "../../../utils/constants";
 type AdverseModalProps = {
   open: boolean;
   handleClose: () => void;
@@ -16,13 +16,9 @@ type AdverseModalProps = {
 
 const AdverseModal = (props: AdverseModalProps) => {
   //let navigate: NavigateFunction = useNavigate();
+  const { open, handleClose, candidate, charges } = props;
   return (
-    <Dialog
-      open={props.open}
-      onClose={props.handleClose}
-      fullWidth
-      maxWidth="md"
-    >
+    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
       <Box
         sx={{
           backgroundColor: theme.palette.other.white,
@@ -37,9 +33,9 @@ const AdverseModal = (props: AdverseModalProps) => {
           }}
         >
           <Typography variant={"caption2"} color={theme.palette.text.primary}>
-            Pre-Adverse Action Notice
+            {randomStrings["preAdverse1"]}
           </Typography>
-          <Box onClick={props.handleClose}>
+          <Box onClick={handleClose}>
             <MyIcon icon="close" />
           </Box>
         </Box>
@@ -61,7 +57,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              james.rodriguez@checkr.com
+              {randomStrings["demoEmail1"]}
             </Typography>
           </Box>
           <Box>
@@ -70,7 +66,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {props.candidate?.email ?? "john.smith@checkr.com"}
+              {candidate?.email ?? randomStrings["demoEmail2"]}
             </Typography>
           </Box>
           <Box>
@@ -79,7 +75,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              Pre-adverse action notice - checkr-bpo
+              {randomStrings["preAdverse2"]}
             </Typography>
           </Box>
           <Box
@@ -108,8 +104,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                Please carefully review the list of charges (in bold) and your
-                contact information.
+                {randomStrings["preAdverse3"]}
               </Typography>
             </Box>
             <Box
@@ -131,8 +126,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                Please note that we will send the corresponding post adverse
-                action email automatically after 7 days.
+                {randomStrings["preAdverse4"]}
               </Typography>
             </Box>
           </Box>
@@ -141,7 +135,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {`Dear ${props.candidate?.name ?? "John Smith"},`}
+              {`Dear ${candidate?.name ?? randomStrings["name"]},`}
             </Typography>
           </Box>
           <Box>
@@ -149,15 +143,10 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              You recently authorized checkr-bpo (“the company”) to obtain
-              consumer reports and/or invistigate consumer reportsabout you from
-              a consumer reporting agency. The Company is considering taking
-              action in whole or in past on information in such report(s)
-              including the following specific Boxs identified in the report
-              prepared by Checkr, Inc.
+              {randomStrings["preAdverse5"]}
             </Typography>
           </Box>
-          {props.charges.map(
+          {charges.map(
             ([charge, check]) =>
               check && (
                 <Box
@@ -189,10 +178,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              If you wish to dispute the accuracy of the information in the
-              report directly with the consumer reporting agency (i.e., the
-              source of the informationcontained in the report), you should
-              contact the agency identifield above directly.
+              {randomStrings["preAdverse6"]}
             </Typography>
           </Box>
           <Box>
@@ -232,7 +218,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                Summary of right under the FCRA
+                {randomStrings["preAdverse7"]}
               </Typography>
             </Box>
             <Box
@@ -247,7 +233,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                Summary of right under the FCRA
+                {randomStrings["preAdverse7"]}
               </Typography>
             </Box>
           </Box>
@@ -263,10 +249,7 @@ const AdverseModal = (props: AdverseModalProps) => {
           <ButtonElement
             label={"Submit Notice"}
             variant={"primary"}
-            onClick={() => {
-              //   setAdverseAction(props.candidate);
-              //   navigate("/");
-            }}
+            onClick={() => {}}
           />
         </Box>
       </Box>

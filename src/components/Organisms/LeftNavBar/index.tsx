@@ -23,6 +23,7 @@ const StyledBox = styled(Box)({
 });
 
 const LeftNavBar = (props: Props) => {
+  const { data } = props;
   return (
     <StyledBox>
       <Box>
@@ -36,7 +37,7 @@ const LeftNavBar = (props: Props) => {
           </Typography>
         </Box>
         <Box sx={{ paddingLeft: "16px", paddingRight: "16px" }}>
-          {props.data.map((item) => (
+          {data.map((item) => (
             <IconText
               icon={item.icon}
               title={item.title}
