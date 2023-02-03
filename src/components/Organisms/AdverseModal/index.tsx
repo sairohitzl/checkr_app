@@ -6,23 +6,20 @@ import Typography from "../../Atoms/Typography";
 import MyIcon from "../../Atoms/MyIcon";
 import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import { setAdverseAction } from "../../../utils/service";
 
 type AdverseModalProps = {
   open: boolean;
   handleClose: () => void;
   candidate: CandidateType;
   charges: (string | boolean)[][];
+  navigate?: NavigateFunction;
 };
 
 const AdverseModal = (props: AdverseModalProps) => {
-  //let navigate: NavigateFunction = useNavigate();
+  const { open, handleClose, candidate, charges, navigate } = props;
   return (
-    <Dialog
-      open={props.open}
-      onClose={props.handleClose}
-      fullWidth
-      maxWidth="md"
-    >
+    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
       <Box
         sx={{
           backgroundColor: theme.palette.other.white,
@@ -39,7 +36,7 @@ const AdverseModal = (props: AdverseModalProps) => {
           <Typography variant={"caption2"} color={theme.palette.text.primary}>
             Pre-Adverse Action Notice
           </Typography>
-          <Box onClick={props.handleClose}>
+          <Box onClick={handleClose}>
             <MyIcon icon="close" />
           </Box>
         </Box>
@@ -70,7 +67,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {props.candidate?.email ?? "john.smith@checkr.com"}
+              {candidate?.email ?? "john.smith@checkr.com"}
             </Typography>
           </Box>
           <Box>
@@ -141,7 +138,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {`Dear ${props.candidate?.name ?? "John Smith"},`}
+              {`Dear ${candidate?.name ?? "John Smith"},`}
             </Typography>
           </Box>
           <Box>
@@ -157,7 +154,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               prepared by Checkr, Inc.
             </Typography>
           </Box>
-          {props.charges.map(
+          {charges.map(
             ([charge, check]) =>
               check && (
                 <Box
@@ -264,8 +261,8 @@ const AdverseModal = (props: AdverseModalProps) => {
             label={"Submit Notice"}
             variant={"primary"}
             onClick={() => {
-              //   setAdverseAction(props.candidate);
-              //   navigate("/");
+              setAdverseAction(candidate);
+              navigate!("/");
             }}
           />
         </Box>

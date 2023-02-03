@@ -38,16 +38,6 @@ export const menuItems: IconTextProps[] = [
   { title: "Screenings", active: false, icon: "screening" },
 ];
 
-export const IconTextData: IconTextProps[] = [
-  { icon: "dashboard", title: "Home", active: false },
-  { icon: "candidates", title: "Candidates", active: false },
-  { icon: "hammer1", title: "Adverse Actions", active: false },
-  { icon: "logs", title: "Logs", active: false },
-  { icon: "analytics", title: "Analytics", active: false },
-  { icon: "account", title: "Account", active: false },
-  { icon: "screening", title: "Screenings", active: false },
-];
-
 export const candidatesList: MyTableDataProps = {
   headers: [
     { text: "NAME", leftAlign: true },

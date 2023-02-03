@@ -19,7 +19,7 @@ const StyledBox = styled(Box)({
   height: "650px",
   backgroundColor: "#FFFFFF",
   boxShadow: "0px 4px 28px rgba(45, 45, 47, 0.1)",
-  width: "250px",
+  width: "100%",
 });
 
 const LeftNavBar = (props: Props) => {

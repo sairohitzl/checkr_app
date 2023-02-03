@@ -9,23 +9,23 @@ import CheckBox from "../../Atoms/Checkbox";
 import Typography from "../../Atoms/Typography";
 import AdverseModal from "../AdverseModal";
 import CheckboxText from "../../Molecules/CheckboxText";
+import { NavigateFunction } from "react-router-dom";
 
 type MailTemplateProps = {
   candidate: CandidateType;
   openAdverse: boolean;
+  setOpenPreAdverse?: React.Dispatch<React.SetStateAction<boolean>>;
   handleClose: () => void;
   charges: (string | boolean)[][];
+  navigate?: NavigateFunction;
 };
 
 const MailTemplate = (props: MailTemplateProps) => {
-  const { candidate } = props;
-  const [open, setOpen] = useState<boolean>(false);
-  const handleClose = () => setOpen(false);
-  const charges = useRef([
-    ["Driving while license suspended", false],
-    ["Assault Domestic Violence", false],
-    ["Unable to verify employment history at Dunder Mifflin", false],
-  ]);
+  const open = props.openAdverse;
+  const setOpen = props.setOpenPreAdverse;
+  const handleClose = props.handleClose;
+  const charges = useRef(props.charges);
+  const candidate = props.candidate;
   let handleCheckBoxClick = (index: number) => {
     charges.current[index][1] = !charges.current[index][1];
   };
@@ -33,9 +33,10 @@ const MailTemplate = (props: MailTemplateProps) => {
     <>
       <AdverseModal
         handleClose={handleClose}
-        candidate={props.candidate}
+        candidate={candidate}
         open={open}
         charges={charges.current}
+        navigate={props.navigate}
       />
       <Grid
         container
@@ -101,13 +102,6 @@ const MailTemplate = (props: MailTemplateProps) => {
             sx={{ paddingTop: "12px", paddingLeft: "20px" }}
             columnGap={1}
           >
-            {/* <CheckBox onClick={() => handleCheckBoxClick(index)} />
-            <Typography
-              variant={"caption2"}
-              color={theme.palette.text.secondary}
-            >
-              {charge.toString()}
-            </Typography> */}
             <CheckboxText
               onClick={() => handleCheckBoxClick(index)}
               variant={"caption2"}
@@ -172,7 +166,7 @@ const MailTemplate = (props: MailTemplateProps) => {
               label={"Preview Notice"}
               variant={"primary"}
               onClick={() => {
-                setOpen(true);
+                setOpen!(true);
               }}
             />
           </Grid>

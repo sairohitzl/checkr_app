@@ -26,7 +26,7 @@ const LeftNavigationbar = (props: LeftNavBarProps) => {
       </Grid>
       <Grid
         item
-        xs
+        xs={9}
         style={{ padding: "20px" }}
         sx={{
           width: "",
