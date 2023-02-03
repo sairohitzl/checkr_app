@@ -10,7 +10,7 @@ export default {
 const Template: ComponentStory<typeof CustomTableHeader> = (args) => (
   <DataGrid
     components={{
-      Header: () => <CustomTableHeader {...args} />,
+      Header: () => <CustomTableHeader />,
     }}
     columns={[]}
     rows={[]}

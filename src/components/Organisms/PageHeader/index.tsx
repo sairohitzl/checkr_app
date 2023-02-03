@@ -16,27 +16,22 @@ export type PageHeaderProps = {
 };
 
 const PageHeader = (props: PageHeaderProps) => {
-  // let navigate = useNavigate();
+  const { title, actions, leading, leadingClick } = props;
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        {props.leading! && (
-          <Box
-            sx={{ paddingRight: "10px", cursor: "pointer" }}
-            // onClick={() => {
-            //   navigate(props.leadingClick!);
-            // }}
-          >
+        {leading! && (
+          <Box sx={{ paddingRight: "10px", cursor: "pointer" }}>
             <MyIcon icon="backArrow" />
           </Box>
         )}
         <Box>
           {" "}
-          <Typography variant="h6">{props.title}</Typography>
+          <Typography variant="h6">{title}</Typography>
         </Box>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        {props.actions?.map((item: JSX.Element) => (
+        {actions?.map((item: JSX.Element) => (
           <Box sx={{ paddingLeft: "10px" }}>{item}</Box>
         ))}
       </Box>

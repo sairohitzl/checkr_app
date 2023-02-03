@@ -6,7 +6,7 @@ import Typography from "../../Atoms/Typography";
 import MyIcon from "../../Atoms/MyIcon";
 import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import { randomStrings } from "../../../utils/constants";
+import { adverseModalStrings } from "../../../utils/constants";
 type AdverseModalProps = {
   open: boolean;
   handleClose: () => void;
@@ -33,7 +33,7 @@ const AdverseModal = (props: AdverseModalProps) => {
           }}
         >
           <Typography variant={"caption2"} color={theme.palette.text.primary}>
-            {randomStrings["preAdverse1"]}
+            {adverseModalStrings["preAdverse1"]}
           </Typography>
           <Box onClick={handleClose}>
             <MyIcon icon="close" />
@@ -57,7 +57,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {randomStrings["demoEmail1"]}
+              {adverseModalStrings["demoEmail1"]}
             </Typography>
           </Box>
           <Box>
@@ -66,7 +66,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {candidate?.email ?? randomStrings["demoEmail2"]}
+              {candidate?.email ?? adverseModalStrings["demoEmail2"]}
             </Typography>
           </Box>
           <Box>
@@ -75,7 +75,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {randomStrings["preAdverse2"]}
+              {adverseModalStrings["preAdverse2"]}
             </Typography>
           </Box>
           <Box
@@ -104,7 +104,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                {randomStrings["preAdverse3"]}
+                {adverseModalStrings["preAdverse3"]}
               </Typography>
             </Box>
             <Box
@@ -126,7 +126,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                {randomStrings["preAdverse4"]}
+                {adverseModalStrings["preAdverse4"]}
               </Typography>
             </Box>
           </Box>
@@ -135,7 +135,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {`Dear ${candidate?.name ?? randomStrings["name"]},`}
+              {`Dear ${candidate?.name ?? adverseModalStrings["name"]},`}
             </Typography>
           </Box>
           <Box>
@@ -143,7 +143,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {randomStrings["preAdverse5"]}
+              {adverseModalStrings["preAdverse5"]}
             </Typography>
           </Box>
           {charges.map(
@@ -178,7 +178,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {randomStrings["preAdverse6"]}
+              {adverseModalStrings["preAdverse6"]}
             </Typography>
           </Box>
           <Box>
@@ -218,7 +218,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                {randomStrings["preAdverse7"]}
+                {adverseModalStrings["preAdverse7"]}
               </Typography>
             </Box>
             <Box
@@ -233,7 +233,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                {randomStrings["preAdverse7"]}
+                {adverseModalStrings["preAdverse7"]}
               </Typography>
             </Box>
           </Box>

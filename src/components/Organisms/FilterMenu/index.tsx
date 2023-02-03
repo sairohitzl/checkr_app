@@ -115,7 +115,6 @@ const FilterMenu = (props: FilterMenuProps) => {
           <Stack direction={"row"} columnGap={1}>
             <Item>
               <CheckBox
-                // color={theme.palette.other.stroke}
                 checked={item.checked}
                 onChange={() => {
                   handleChangeFilterVal1(index);
@@ -140,7 +139,6 @@ const FilterMenu = (props: FilterMenuProps) => {
           <Stack direction={"row"} columnGap={1}>
             <Item>
               <CheckBox
-                // color={theme.palette.other.stroke}
                 checked={item.checked}
                 onChange={() => handleChangeFilterVal2(index)}
               />

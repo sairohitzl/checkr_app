@@ -637,7 +637,7 @@ export const candidatesTableList: CandidateType[] = [
   },
 ];
 
-export const randomStrings = {
+export const adverseModalStrings = {
   name: "John Smith",
   preAdverse1: "Pre-Adverse Action Notice",
   demoEmail1: "james.rodriguez@checkr.com",
@@ -660,3 +660,24 @@ export const randomStrings = {
   contact the agency identifield above directly.`,
   preAdverse7: `Summary of right under the FCRA`,
 };
+
+export const headerVals = [
+  "name",
+  "adjudication",
+  "status",
+  "location",
+  "date",
+];
+export const headerNames = {
+  name: "NAME",
+  adjudication: "ADJUDICATION",
+  status: "STATUS",
+  location: "LOCATION",
+  date: "DATE",
+};
+
+export const adverseCharges = [
+  "Driving while license suspended",
+  "Assault Domestic Violence",
+  "Unable to verify employment history at Dunder Mifflin",
+];
