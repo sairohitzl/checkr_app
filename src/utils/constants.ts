@@ -626,3 +626,48 @@ export const candidatesTableList: CandidateType[] = [
     turnAroundTime: "1 Day , 14 hours",
   },
 ];
+
+export const adverseModalStrings = {
+  name: "John Smith",
+  preAdverse1: "Pre-Adverse Action Notice",
+  demoEmail1: "james.rodriguez@checkr.com",
+  demoEmail2: "james.rodriguez@checkr.com",
+  preAdverse2: "Pre-adverse action notice - checkr-bpo",
+  preAdverse3:
+    "Please carefully review the list of charges (in bold) and your contact information.",
+
+  preAdverse4:
+    "Please note that we will send the corresponding post adverse action email automatically after 7 days.",
+  preAdverse5: `You recently authorized checkr-bpo (“the company”) to obtain
+  consumer reports and/or invistigate consumer reportsabout you from
+  a consumer reporting agency. The Company is considering taking
+  action in whole or in past on information in such report(s)
+  including the following specific Boxs identified in the report
+  prepared by Checkr, Inc.`,
+  preAdverse6: `If you wish to dispute the accuracy of the information in the
+  report directly with the consumer reporting agency (i.e., the
+  source of the informationcontained in the report), you should
+  contact the agency identifield above directly.`,
+  preAdverse7: `Summary of right under the FCRA`,
+};
+
+export const headerVals = [
+  "name",
+  "adjudication",
+  "status",
+  "location",
+  "date",
+];
+export const headerNames = {
+  name: "NAME",
+  adjudication: "ADJUDICATION",
+  status: "STATUS",
+  location: "LOCATION",
+  date: "DATE",
+};
+
+export const adverseCharges = [
+  "Driving while license suspended",
+  "Assault Domestic Violence",
+  "Unable to verify employment history at Dunder Mifflin",
+];

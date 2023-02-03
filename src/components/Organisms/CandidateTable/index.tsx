@@ -8,7 +8,11 @@ import Typography from "../../Atoms/Typography";
 import CustomTag from "../../Molecules/CustomTag";
 import CustomTableHeader from "../CustomTableHeader";
 import CustomTableFooter from "../CustomTableFooter";
-import { candidatesTableList } from "../../../utils/constants";
+import {
+  candidatesTableList,
+  headerNames,
+  headerVals,
+} from "../../../utils/constants";
 import { getCandidates } from "../../../utils/service";
 
 type CandidateTableProps = {
@@ -90,8 +94,8 @@ const CandidateTable = (props: CandidateTableProps) => {
             },
           },
           {
-            field: "adjudication",
-            headerName: "ADJUDICATION",
+            field: headerVals[1],
+            headerName: headerNames.adjudication,
             width: 220,
             sortable: false,
             disableColumnMenu: true,
@@ -118,8 +122,8 @@ const CandidateTable = (props: CandidateTableProps) => {
             },
           },
           {
-            field: "status",
-            headerName: "STATUS",
+            field: headerVals[2],
+            headerName: headerNames.status,
             width: 220,
             sortable: false,
             disableColumnMenu: true,
@@ -143,9 +147,9 @@ const CandidateTable = (props: CandidateTableProps) => {
             },
           },
           {
-            field: "location",
-            headerName: "LOCATION",
-            width: 160,
+            field: headerVals[3],
+            headerName: headerNames.location,
+            width: 220,
             sortable: false,
             disableColumnMenu: true,
             renderHeader(params) {
@@ -168,8 +172,8 @@ const CandidateTable = (props: CandidateTableProps) => {
             },
           },
           {
-            field: "date",
-            headerName: "DATE",
+            field: headerVals[4],
+            headerName: headerNames.date,
             headerAlign: "right",
             width: 220,
             align: "right",

@@ -10,6 +10,8 @@ import Typography from "../../Atoms/Typography";
 import AdverseModal from "../AdverseModal";
 import CheckboxText from "../../Molecules/CheckboxText";
 import { NavigateFunction } from "react-router-dom";
+import { adverseCharges } from "../../../utils/constants";
+import { adverseModalStrings } from "../../../utils/constants";
 
 type MailTemplateProps = {
   candidate: CandidateType;
@@ -41,7 +43,7 @@ const MailTemplate = (props: MailTemplateProps) => {
       <Grid
         container
         sx={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: theme.palette.text.disabled,
           borderRadius: "12px",
           boxShadow: "0px 4px 28px rgba(45, 45, 47, 0.1)",
         }}
@@ -61,14 +63,14 @@ const MailTemplate = (props: MailTemplateProps) => {
             {props.candidate?.email ?? "john.smith@checkr.com"}
           </Typography>
         </Grid>
-        <Divider style={{ width: "100%", color: "#E5E7ED" }} />
+        <Divider style={{ width: "100%", color: theme.palette.other.stroke }} />
         <Grid container sx={{ padding: "20px" }} columnGap={0.5}>
           <Typography variant={"caption1"}>Subject:</Typography>
           <Typography variant={"caption1"} color={theme.palette.text.secondary}>
-            Pre-adverse action notice - checkr-bpo
+            {adverseModalStrings.preAdverse2}
           </Typography>
         </Grid>
-        <Divider style={{ width: "100%", color: "#E5E7ED" }} />
+        <Divider style={{ width: "100%", color: theme.palette.other.stroke }} />
         <Grid
           container
           sx={{ paddingTop: "20px", paddingLeft: "20px" }}
@@ -83,12 +85,7 @@ const MailTemplate = (props: MailTemplateProps) => {
         </Grid>
         <Grid container sx={{ paddingTop: "10px", paddingLeft: "20px" }} xs={8}>
           <Typography variant={"body2"} color={theme.palette.text.secondary}>
-            You recently authorized checkr-bpo (“the company”) to obtain
-            consumer reports and/or invistigate consumer reportsabout you from a
-            consumer reporting agency. The Company is considering taking action
-            in whole or in past on information in such report(s) including the
-            following specific items identified in the report prepared by
-            Checkr, Inc.
+            {adverseModalStrings.preAdverse5}
           </Typography>
         </Grid>
         <Grid container sx={{ paddingTop: "10px", paddingLeft: "20px" }}>
@@ -111,11 +108,8 @@ const MailTemplate = (props: MailTemplateProps) => {
         ))}
 
         <Grid container sx={{ paddingTop: "24px", paddingLeft: "20px" }} xs={8}>
-          <Typography variant={"caption1"} color={theme.palette.text.secondary}>
-            If you wish to dispute the accuracy of the information in the report
-            directly with the consumer reporting agency (i.e., the source of the
-            informationcontained in the report), you should contact the agency
-            identifield above directly.
+          <Typography variant={"body2"} color={theme.palette.text.secondary}>
+            {adverseModalStrings.preAdverse6}
           </Typography>
         </Grid>
         <Grid container sx={{ paddingTop: "20px", paddingLeft: "20px" }}>
@@ -131,11 +125,10 @@ const MailTemplate = (props: MailTemplateProps) => {
             Checkr-bpo
           </Typography>
         </Grid>
-        <Divider style={{ width: "100%", color: "#E5E7ED" }} />
+        <Divider style={{ width: "100%", color: theme.palette.other.stroke }} />
         <Grid container xs={12} sx={{ padding: "20px" }} alignContent="center">
           <Grid container xs={4}>
             <Grid container alignItems={"center"}>
-              {"  "}
               <Stack direction={"row"} spacing={1} alignItems={"center"}>
                 <Item>
                   <Typography
@@ -157,7 +150,6 @@ const MailTemplate = (props: MailTemplateProps) => {
                   </Typography>
                 </Item>
               </Stack>
-              {"  "}
             </Grid>
           </Grid>
           <Grid item xs={6}></Grid>

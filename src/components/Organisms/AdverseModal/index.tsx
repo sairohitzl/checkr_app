@@ -8,6 +8,7 @@ import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { setAdverseAction } from "../../../utils/service";
 
+import { adverseModalStrings } from "../../../utils/constants";
 type AdverseModalProps = {
   open: boolean;
   handleClose: () => void;
@@ -34,7 +35,7 @@ const AdverseModal = (props: AdverseModalProps) => {
           }}
         >
           <Typography variant={"caption2"} color={theme.palette.text.primary}>
-            Pre-Adverse Action Notice
+            {adverseModalStrings["preAdverse1"]}
           </Typography>
           <Box onClick={handleClose}>
             <MyIcon icon="close" />
@@ -58,7 +59,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              james.rodriguez@checkr.com
+              {adverseModalStrings["demoEmail1"]}
             </Typography>
           </Box>
           <Box>
@@ -67,7 +68,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {candidate?.email ?? "john.smith@checkr.com"}
+              {candidate?.email ?? adverseModalStrings["demoEmail2"]}
             </Typography>
           </Box>
           <Box>
@@ -76,7 +77,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              Pre-adverse action notice - checkr-bpo
+              {adverseModalStrings["preAdverse2"]}
             </Typography>
           </Box>
           <Box
@@ -105,8 +106,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                Please carefully review the list of charges (in bold) and your
-                contact information.
+                {adverseModalStrings["preAdverse3"]}
               </Typography>
             </Box>
             <Box
@@ -128,8 +128,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.other.emailfg}
               >
-                Please note that we will send the corresponding post adverse
-                action email automatically after 7 days.
+                {adverseModalStrings["preAdverse4"]}
               </Typography>
             </Box>
           </Box>
@@ -138,7 +137,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              {`Dear ${candidate?.name ?? "John Smith"},`}
+              {`Dear ${candidate?.name ?? adverseModalStrings["name"]},`}
             </Typography>
           </Box>
           <Box>
@@ -146,12 +145,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              You recently authorized checkr-bpo (“the company”) to obtain
-              consumer reports and/or invistigate consumer reportsabout you from
-              a consumer reporting agency. The Company is considering taking
-              action in whole or in past on information in such report(s)
-              including the following specific Boxs identified in the report
-              prepared by Checkr, Inc.
+              {adverseModalStrings["preAdverse5"]}
             </Typography>
           </Box>
           {charges.map(
@@ -186,10 +180,7 @@ const AdverseModal = (props: AdverseModalProps) => {
               variant={"caption1"}
               color={theme.palette.text.secondary}
             >
-              If you wish to dispute the accuracy of the information in the
-              report directly with the consumer reporting agency (i.e., the
-              source of the informationcontained in the report), you should
-              contact the agency identifield above directly.
+              {adverseModalStrings["preAdverse6"]}
             </Typography>
           </Box>
           <Box>
@@ -229,7 +220,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                Summary of right under the FCRA
+                {adverseModalStrings["preAdverse7"]}
               </Typography>
             </Box>
             <Box
@@ -244,7 +235,7 @@ const AdverseModal = (props: AdverseModalProps) => {
                 variant={"caption2"}
                 color={theme.palette.text.secondary}
               >
-                Summary of right under the FCRA
+                {adverseModalStrings["preAdverse7"]}
               </Typography>
             </Box>
           </Box>

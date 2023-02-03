@@ -10,11 +10,10 @@ export default {
 const Template: ComponentStory<typeof CustomTableFooter> = (args) => (
   <DataGrid
     components={{
-      Footer: () => <CustomTableFooter {...args} />,
+      Footer: () => <CustomTableFooter />,
     }}
     columns={[]}
     rows={[]}
   />
 );
 export const Footer = Template.bind({});
-Footer.args = {};

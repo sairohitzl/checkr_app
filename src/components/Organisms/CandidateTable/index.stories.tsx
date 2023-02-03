@@ -7,9 +7,5 @@ export default {
   component: CandidateTable,
 } as ComponentMeta<typeof CandidateTable>;
 const Template: ComponentStory<typeof CandidateTable> = (args) => (
-  <CandidateTable {...args} />
+  <CandidateTable />
 );
-// export const table = Template.bind({});
-// table.args = {
-
-// }

@@ -15,12 +15,9 @@ import theme from "../../../theme/theme";
 import MyIcon from "../../Atoms/MyIcon";
 import Typography from "../../Atoms/Typography";
 import IconButton from "../../Molecules/IconButton";
-
 import FilterMenu from "../FilterMenu";
 
-type CustomTableHeaderProps = {};
-
-const CustomTableHeader = (props: CustomTableHeaderProps) => {
+const CustomTableHeader = () => {
   const [filterval1, setFilterval1] = useState("");
   const [filterval2, setFilterval2] = useState("");
   const [open, setOpen] = React.useState(false);
@@ -65,7 +62,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps) => {
         <GridToolbarQuickFilter
           placeholder="Search any candidate"
           sx={{
-            border: "1px solid #E5E7ED",
+            border: `1px solid ${theme.palette.other.stroke}`,
             borderRadius: "4px",
             padding: "4px 8px",
           }}
@@ -89,7 +86,7 @@ const CustomTableHeader = (props: CustomTableHeaderProps) => {
           sx={{
             color: theme.palette.text.secondary,
             textTransform: "none",
-            border: "1px solid #E5E7ED",
+            border: `1px solid ${theme.palette.other.stroke}`,
             padding: " 8px 16px",
             borderRadius: "4px",
           }}
@@ -129,8 +126,13 @@ const CustomTableHeader = (props: CustomTableHeaderProps) => {
             </Grow>
           )}
         </Popper>
-        <Box sx={{ border: "1px solid #E5E7ED", borderRadius: "4px" }}>
-          <IconButton icon={"more"} variant={"secondary"} />
+        <Box
+          sx={{
+            border: `1px solid ${theme.palette.other.stroke} `,
+            borderRadius: "4px",
+          }}
+        >
+          <IconButton icon={"More"} variant={"secondary"} />
         </Box>
       </Box>
     </Box>

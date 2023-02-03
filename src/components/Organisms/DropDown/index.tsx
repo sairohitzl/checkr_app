@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import InfoLabel from "../../Molecules/InfoLabel";
 import UserInfo, { UserInfoProps } from "../../Molecules/UserInfo";
 import React, { useState } from "react";
+import theme from "../../../theme/theme";
 
 type Props = {
   title: string;
@@ -15,7 +16,7 @@ const DropDown = (props: Props) => {
     <Grid
       container
       sx={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: theme.palette.text.disabled,
         borderRadius: "8px",
         boxShadow: "0px 4px 28px rgba(45, 45, 47, 0.1)",
       }}

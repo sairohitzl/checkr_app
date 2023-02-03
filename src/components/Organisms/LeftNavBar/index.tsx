@@ -17,12 +17,13 @@ const StyledBox = styled(Box)({
   justifyContent: "space-between",
   borderRadius: "6px",
   height: "650px",
-  backgroundColor: "#FFFFFF",
+  backgroundColor: theme.palette.text.disabled,
   boxShadow: "0px 4px 28px rgba(45, 45, 47, 0.1)",
   width: "100%",
 });
 
 const LeftNavBar = (props: Props) => {
+  const { data } = props;
   return (
     <StyledBox>
       <Box>
@@ -36,7 +37,7 @@ const LeftNavBar = (props: Props) => {
           </Typography>
         </Box>
         <Box sx={{ paddingLeft: "16px", paddingRight: "16px" }}>
-          {props.data.map((item) => (
+          {data.map((item) => (
             <IconText
               icon={item.icon}
               title={item.title}
@@ -52,11 +53,11 @@ const LeftNavBar = (props: Props) => {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "16px",
-          borderTop: "1px solid #E5E7ED",
+          borderTop: `1px solid ${theme.palette.other.stroke}`,
         }}
       >
         <ProfileTab name="James Rodriguez" email="James.co" />
-        <MyIcon icon="logout" colour="#696A6E" />
+        <MyIcon icon="logout" colour={theme.palette.text.secondary} />
       </Box>
     </StyledBox>
   );
