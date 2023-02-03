@@ -1,5 +1,5 @@
 import { Checkbox } from '@mui/material';
-import React, { SyntheticEvent } from "react";
+import { SyntheticEvent } from 'react';
 
 type Props = {
     checked?: boolean;
@@ -11,8 +11,7 @@ const CheckBox = (props: Props) => {
   const {checked,onClick,onChange} = props
   return (
     
-    <Checkbox checked={checked} color={'primary'} onClick={onClick}
-    onChange={onChange}/>
+    <Checkbox checked={checked} onClick={onClick} color={'primary'}/>
     
   )
 }
