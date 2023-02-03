@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import CandidatesPage from "./components/pages/MainPage";
+import CandidatesPage from "./components/pages/index";
 import CandidateDetailPage from "./components/pages/CandidateDetailsPage";
 import PreAdversePage from "./components/pages/PreadversePage";
 

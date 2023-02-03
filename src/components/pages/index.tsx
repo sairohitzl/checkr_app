@@ -6,9 +6,8 @@ import PageHeader from "../Organisms/PageHeader";
 import IconTextButton from "../Molecules/IconTextButton";
 import CandidateTable from "../Organisms/CandidateTable";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-type Props = {};
 
-const CandidatesPage = (props: Props) => {
+const CandidatesPage = () => {
   let navigate: NavigateFunction = useNavigate();
   const [open, setOpen] = useState<boolean>(false);
   const handleClose = () => setOpen(false);
