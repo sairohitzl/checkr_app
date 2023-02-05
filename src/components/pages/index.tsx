@@ -6,6 +6,7 @@ import PageHeader from "../Organisms/PageHeader";
 import IconTextButton from "../Molecules/IconTextButton";
 import CandidateTable from "../Organisms/CandidateTable";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import ExportCard from "../Organisms/ExportCard";
 
 const CandidatesPage = () => {
   let navigate: NavigateFunction = useNavigate();
@@ -13,6 +14,7 @@ const CandidatesPage = () => {
   const handleClose = () => setOpen(false);
   return (
     <>
+      <ExportCard open={open} handleClose={handleClose} />
       <LeftNavigationbar
         leftNav={<LeftNavBar data={menuItems} />}
         navHeader={

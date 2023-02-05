@@ -132,7 +132,7 @@ const CustomTableHeader = () => {
             borderRadius: "4px",
           }}
         >
-          <IconButton icon={"More"} variant={"secondary"} />
+          <IconButton icon={"more"} variant={"secondary"} />
         </Box>
       </Box>
     </Box>
