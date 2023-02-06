@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Dialog,
-  Stack,
   TextField,
   Divider,
   Grid,
@@ -11,14 +10,11 @@ import {
 import Typography from "../../Atoms/Typography";
 import theme from "../../../theme/theme";
 import ButtonElement from "../../Atoms/Button";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import dayjs, { Dayjs } from "dayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { ThemeProvider, width } from "@mui/system";
+import { ThemeProvider } from "@mui/system";
 import MyIcon from "../../Atoms/MyIcon";
 import { getCandidates } from "../../../utils/service";
-import { CSVDownload, CSVLink } from "react-csv";
+import { CSVLink } from "react-csv";
 import CandidateType from "../../../utils/candidate";
 
 type ExportCardProps = {
