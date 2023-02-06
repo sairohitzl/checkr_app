@@ -106,7 +106,7 @@ const FilterMenu = (props: FilterMenuProps) => {
         </Typography>
       </Box>
       <Divider />
-      <Stack padding={"16px"} rowGap={1}>
+      <Stack padding={"20px"} rowGap={1}>
         <Typography
           variant="body1"
           fontWeight={"bold"}
@@ -115,17 +115,7 @@ const FilterMenu = (props: FilterMenuProps) => {
           Status
         </Typography>
         {filterOptions1.map((item, index) => (
-          <Stack direction={"row"} columnGap={1}>
-            {/* <Item>
-              <CheckboxText
-                checked={item.checked}
-                onChange={() => {
-                  handleChangeFilterVal1(index);
-                }}
-                text={item.text}
-                variant={"caption2"}
-              />
-            </Item> */}
+          <Stack direction={"row"} alignItems={"center"} columnGap={1}>
             <Item>
               <CheckBox
                 checked={item.checked}
@@ -149,17 +139,7 @@ const FilterMenu = (props: FilterMenuProps) => {
           Adjudication
         </Typography>
         {filterOptions2.map((item, index) => (
-          <Stack direction={"row"} columnGap={1}>
-            {/* <Item>
-              <CheckboxText
-                checked={item.checked}
-                onChange={() => {
-                  handleChangeFilterVal2(index);
-                }}
-                text={item.text}
-                variant={"caption2"}
-              />
-            </Item> */}
+          <Stack direction={"row"} alignItems={"center"} columnGap={1}>
             <Item>
               <CheckBox
                 checked={item.checked}
