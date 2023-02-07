@@ -64,6 +64,7 @@ const ExportCard = (props: ExportCardProps) => {
 
   return (
     <Dialog
+      data-testid="exportcard"
       open={props.open}
       onClose={props.handleClose}
       fullWidth

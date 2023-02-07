@@ -98,6 +98,7 @@ const FilterMenu = (props: FilterMenuProps) => {
 
   return (
     <Box
+      data-testid="filtermenu"
       sx={{
         borderRadius: "6px",
         display: "flex",

@@ -33,6 +33,7 @@ const CustomTableFooter = () => {
 
   return (
     <Box
+      data-testid="tablefooter"
       sx={{
         display: "flex",
         justifyContent: "space-between",

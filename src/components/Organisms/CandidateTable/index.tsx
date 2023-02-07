@@ -35,7 +35,7 @@ const CandidateTable = (props: CandidateTableProps) => {
   }, []);
 
   return (
-    <Box sx={{ height: "90vh", width: "77vw" }}>
+    <Box data-testid="candtable" sx={{ height: "90vh", width: "77vw" }}>
       <DataGrid
         sx={{
           backgroundColor: theme.palette.other.white,
@@ -47,6 +47,9 @@ const CandidateTable = (props: CandidateTableProps) => {
           },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: theme.palette.primary["100"],
+          },
+          "&.MuiDataGrid-root .MuiDataGrid-cell:focus": {
+            outline: "none",
           },
         }}
         components={{

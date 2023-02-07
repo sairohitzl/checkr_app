@@ -40,6 +40,7 @@ const CustomTableHeader = () => {
 
   return (
     <Box
+      data-testid="tableheader"
       sx={{
         padding: "12px 16px",
         display: "flex",

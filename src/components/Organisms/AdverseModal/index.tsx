@@ -20,7 +20,13 @@ type AdverseModalProps = {
 const AdverseModal = (props: AdverseModalProps) => {
   const { open, handleClose, candidate, charges, navigate } = props;
   return (
-    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+    <Dialog
+      data-testid="adversemodal"
+      open={open}
+      onClose={handleClose}
+      fullWidth
+      maxWidth="md"
+    >
       <Box
         sx={{
           backgroundColor: theme.palette.other.white,

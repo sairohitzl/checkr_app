@@ -25,7 +25,7 @@ const StyledBox = styled(Box)({
 const LeftNavBar = (props: Props) => {
   const { data } = props;
   return (
-    <StyledBox>
+    <StyledBox data-testid="leftnavbar">
       <Box>
         <Box sx={{ padding: "20px 28px" }}>
           <Typography
