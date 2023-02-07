@@ -31,9 +31,9 @@ const CustomTag = (props: Props) => {
       break;
     default:
       tagStyle = {
-        backgroundColor: theme.palette.accent.lightGreen,
+        backgroundColor: "white",
       };
-      color = theme.palette.accent.green;
+      color = "red";
   }
 
   tagStyle = {

@@ -6,7 +6,7 @@ import theme from "../../../theme/theme";
 export type MyCellProps = {
   variant: "text" | "interactivetext" | "date" | "status";
   text: string;
-  statustype?: "green" | "yellow" | "green";
+  statustype?: "green" | "yellow" | "blue";
   onClick?: () => void;
   itemId?: number;
 };

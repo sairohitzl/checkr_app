@@ -1,8 +1,8 @@
 import {
+  Typography as MuiTypography,
   ThemeProvider,
   TypographyProps as MuiTypographyProps,
 } from "@mui/material";
-import { Typography as MuiTypography } from "@mui/material";
 import theme from "../../../theme/theme";
 
 interface TypographyProps extends MuiTypographyProps {
