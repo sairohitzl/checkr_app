@@ -21,6 +21,7 @@ const IconButton = (props: Props) => {
 
   return (
     <Button
+      data-testid="iconbutton"
       onClick={onClick}
       style={{
         textTransform: "none",

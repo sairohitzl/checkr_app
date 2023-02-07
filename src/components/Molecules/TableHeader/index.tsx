@@ -15,7 +15,11 @@ const RightAlignedDiv = styled("div")({
 const TableHeader = (props: MyTableHeaderProps) => {
   const { leftAlign, text } = props;
   return (
-    <TableCell align="left" sx={{ backgroundColor: "#F7F8FA" }}>
+    <TableCell
+      align="left"
+      sx={{ backgroundColor: "#F7F8FA" }}
+      data-testid="tableheader"
+    >
       {!leftAlign && (
         <RightAlignedDiv>
           <Typography variant="caption1" color={theme.palette.text.secondary}>

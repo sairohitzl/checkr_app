@@ -11,6 +11,7 @@ const CheckBox = (props: Props) => {
   const { checked, onClick, onChange } = props;
   return (
     <Checkbox
+      data-testid="checkbox"
       checked={checked}
       onClick={onClick}
       color={"primary"}
