@@ -48,14 +48,12 @@ const FilterMenu = (props: FilterMenuProps) => {
   }, [finalFilter]);
 
   const handleChangeFilterVal1 = (id: number) => {
-    // filterOptions1.map((item) => {
-    //   item.checked = false;
-    // });
     filterOptions1.forEach((item) => {
       item.checked = false;
     });
     filterOptions1[id].checked = true;
-    setFilterOptions1(filterOptions1);
+    let dupFilterOptions1 = filterOptions1;
+    setFilterOptions1(dupFilterOptions1);
     setFinalFilter({
       items: [
         {
@@ -72,14 +70,12 @@ const FilterMenu = (props: FilterMenuProps) => {
   };
 
   const handleChangeFilterVal2 = (id: number) => {
-    // filterOptions2.map((item) => {
-    //   item.checked = false;
-    // });
     filterOptions2.forEach((item) => {
       item.checked = false;
     });
     filterOptions2[id].checked = true;
-    setFilterOptions2(filterOptions2);
+    let dupFilterOptions2 = filterOptions1;
+    setFilterOptions2(dupFilterOptions2);
     setFinalFilter({
       items: [
         {
