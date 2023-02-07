@@ -28,12 +28,10 @@ const CustomTableHeader = () => {
   };
 
   const handleClose = (event: Event | React.SyntheticEvent) => {
-    console.log("clickaway11.....");
     if (
       anchorRef.current &&
       anchorRef.current.contains(event.target as HTMLElement)
     ) {
-      console.log("clickaway.....");
       return;
     }
 
