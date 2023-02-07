@@ -52,8 +52,7 @@ const FilterMenu = (props: FilterMenuProps) => {
       item.checked = false;
     });
     filterOptions1[id].checked = true;
-    let dupFilterOptions1 = filterOptions1;
-    setFilterOptions1(dupFilterOptions1);
+    setFilterOptions1(filterOptions1);
     setFinalFilter({
       items: [
         {
@@ -74,8 +73,7 @@ const FilterMenu = (props: FilterMenuProps) => {
       item.checked = false;
     });
     filterOptions2[id].checked = true;
-    let dupFilterOptions2 = filterOptions1;
-    setFilterOptions2(dupFilterOptions2);
+    setFilterOptions2(filterOptions2);
     setFinalFilter({
       items: [
         {
