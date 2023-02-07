@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing IconText Snapshots 1`] = `
+<div
+  className="MuiBox-root css-0"
+  onClick={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "background": "#EFF2FF",
+      "borderRadius": "6px",
+      "display": "flex",
+      "justifyContent": "flex-start",
+      "padding": "12px",
+    }
+  }
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1308pav-MuiSvgIcon-root"
+    data-testid="myicon"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M14.12 10.47 12 12.59l-2.13-2.12-1.41 1.41L10.59 14l-2.12 2.12 1.41 1.41L12 15.41l2.12 2.12 1.41-1.41L13.41 14l2.12-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"
+    />
+  </svg>
+  <span
+    style={
+      {
+        "color": "#3E5FE2",
+        "paddingLeft": "10px",
+      }
+    }
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1a8qfyx-MuiTypography-root"
+    >
+      John
+    </p>
+  </span>
+</div>
+`;

@@ -10,7 +10,7 @@ exports[`Testing usercard 1`] = `
     <svg
       aria-hidden={true}
       className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1dko45o-MuiSvgIcon-root"
-      data-testid="PersonOutlineOutlinedIcon"
+      data-testid="myicon"
       focusable="false"
       viewBox="0 0 24 24"
     >
