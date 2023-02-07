@@ -6,17 +6,19 @@ import Typography from "../../Atoms/Typography";
 import MyIcon from "../../Atoms/MyIcon";
 import CandidateType from "../../../utils/candidate";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import { setAdverseAction } from "../../../utils/service";
+
 import { adverseModalStrings } from "../../../utils/constants";
 type AdverseModalProps = {
   open: boolean;
   handleClose: () => void;
   candidate: CandidateType;
   charges: (string | boolean)[][];
+  navigate?: NavigateFunction;
 };
 
 const AdverseModal = (props: AdverseModalProps) => {
-  //let navigate: NavigateFunction = useNavigate();
-  const { open, handleClose, candidate, charges } = props;
+  const { open, handleClose, candidate, charges, navigate } = props;
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
       <Box
@@ -249,7 +251,10 @@ const AdverseModal = (props: AdverseModalProps) => {
           <ButtonElement
             label={"Submit Notice"}
             variant={"primary"}
-            onClick={() => {}}
+            onClick={() => {
+              setAdverseAction(candidate);
+              navigate!("/");
+            }}
           />
         </Box>
       </Box>

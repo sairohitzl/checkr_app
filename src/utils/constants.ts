@@ -30,22 +30,12 @@ export const userReportData: UserInfoProps[] = [
 
 export const menuItems: IconTextProps[] = [
   { title: "Home", active: false, icon: "dashboard" },
-  { title: "Candidates", active: true, icon: "contacts" },
+  { title: "Candidates", active: true, icon: "candidates" },
   { title: "Adverse Actions", active: false, icon: "hammer2" },
   { title: "Logs", active: false, icon: "logs" },
   { title: "Analytics", active: false, icon: "analytics" },
   { title: "Account", active: false, icon: "account" },
   { title: "Screenings", active: false, icon: "screening" },
-];
-
-export const IconTextData: IconTextProps[] = [
-  { icon: "dashboard", title: "Home", active: false },
-  { icon: "candidates", title: "Candidates", active: false },
-  { icon: "hammer1", title: "Adverse Actions", active: false },
-  { icon: "logs", title: "Logs", active: false },
-  { icon: "analytics", title: "Analytics", active: false },
-  { icon: "account", title: "Account", active: false },
-  { icon: "screening", title: "Screenings", active: false },
 ];
 
 export const candidatesList: MyTableDataProps = {

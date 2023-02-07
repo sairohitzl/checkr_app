@@ -28,10 +28,12 @@ const CustomTableHeader = () => {
   };
 
   const handleClose = (event: Event | React.SyntheticEvent) => {
+    console.log("clickaway11.....");
     if (
       anchorRef.current &&
       anchorRef.current.contains(event.target as HTMLElement)
     ) {
+      console.log("clickaway.....");
       return;
     }
 
@@ -93,27 +95,28 @@ const CustomTableHeader = () => {
         >
           <Typography>Filter</Typography>
         </Button>
-        <Popper
-          open={open}
-          anchorEl={anchorRef.current}
-          role={undefined}
-          placement="bottom-start"
-          transition
-          disablePortal
-          sx={{
-            zIndex: 1,
-          }}
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              style={{
-                transformOrigin:
-                  placement === "bottom-start" ? "left top" : "left bottom",
-              }}
-            >
-              <Paper elevation={2}>
-                <ClickAwayListener onClickAway={handleClose}>
+        <ClickAwayListener onClickAway={handleClose}>
+          <Popper
+            id="composition-menu"
+            open={open}
+            anchorEl={anchorRef.current}
+            role={undefined}
+            placement="bottom-start"
+            transition
+            disablePortal
+            sx={{
+              zIndex: 1,
+            }}
+          >
+            {({ TransitionProps, placement }) => (
+              <Grow
+                {...TransitionProps}
+                style={{
+                  transformOrigin:
+                    placement === "bottom-start" ? "left top" : "left bottom",
+                }}
+              >
+                <Paper elevation={2}>
                   <FilterMenu
                     setFilter={apiRef.current.setFilterModel}
                     filterval1={filterval1}
@@ -121,18 +124,18 @@ const CustomTableHeader = () => {
                     filterval2={filterval2}
                     setFilterval2={setFilterval2}
                   />
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Popper>
+                </Paper>
+              </Grow>
+            )}
+          </Popper>
+        </ClickAwayListener>
         <Box
           sx={{
             border: `1px solid ${theme.palette.other.stroke} `,
             borderRadius: "4px",
           }}
         >
-          <IconButton icon={"More"} variant={"secondary"} />
+          <IconButton icon={"more"} variant={"secondary"} />
         </Box>
       </Box>
     </Box>

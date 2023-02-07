@@ -23,6 +23,7 @@ const IconTextButton = (props: IconTextButtonProps) => {
 
   return (
     <Button
+      onClick={onClick}
       sx={{
         padding: "8px 16px",
         textTransform: "none",

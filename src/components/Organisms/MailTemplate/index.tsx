@@ -9,25 +9,25 @@ import CheckBox from "../../Atoms/Checkbox";
 import Typography from "../../Atoms/Typography";
 import AdverseModal from "../AdverseModal";
 import CheckboxText from "../../Molecules/CheckboxText";
+import { NavigateFunction } from "react-router-dom";
 import { adverseCharges } from "../../../utils/constants";
 import { adverseModalStrings } from "../../../utils/constants";
 
 type MailTemplateProps = {
   candidate: CandidateType;
   openAdverse: boolean;
+  setOpenPreAdverse?: React.Dispatch<React.SetStateAction<boolean>>;
   handleClose: () => void;
   charges: (string | boolean)[][];
+  navigate?: NavigateFunction;
 };
 
 const MailTemplate = (props: MailTemplateProps) => {
-  const { candidate } = props;
-  const [open, setOpen] = useState<boolean>(false);
-  const handleClose = () => setOpen(false);
-  const charges = useRef([
-    [adverseCharges[0], false],
-    [adverseCharges[1], false],
-    [adverseCharges[2], false],
-  ]);
+  const open = props.openAdverse;
+  const setOpen = props.setOpenPreAdverse;
+  const handleClose = props.handleClose;
+  const charges = useRef(props.charges);
+  const candidate = props.candidate;
   let handleCheckBoxClick = (index: number) => {
     charges.current[index][1] = !charges.current[index][1];
   };
@@ -35,9 +35,10 @@ const MailTemplate = (props: MailTemplateProps) => {
     <>
       <AdverseModal
         handleClose={handleClose}
-        candidate={props.candidate}
+        candidate={candidate}
         open={open}
         charges={charges.current}
+        navigate={props.navigate}
       />
       <Grid
         container
@@ -157,7 +158,7 @@ const MailTemplate = (props: MailTemplateProps) => {
               label={"Preview Notice"}
               variant={"primary"}
               onClick={() => {
-                setOpen(true);
+                setOpen!(true);
               }}
             />
           </Grid>

@@ -1,24 +1,30 @@
-import { TypographyProps as MuiTypographyProps } from '@mui/material'
-import {Typography as MuiTypography } from '@mui/material'
+import {
+  ThemeProvider,
+  TypographyProps as MuiTypographyProps,
+} from "@mui/material";
+import { Typography as MuiTypography } from "@mui/material";
+import theme from "../../../theme/theme";
 
-
-interface TypographyProps extends MuiTypographyProps{
-    children?:string
+interface TypographyProps extends MuiTypographyProps {
+  children?: string;
 }
 
 const Typography = (props: TypographyProps) => {
-    const {children,variant,align,color,gutterBottom, ...rest} = props;
+  const { children, variant, align, color, gutterBottom, ...rest } = props;
   return (
-    <MuiTypography 
-    variant={variant}
-    align={align}
-    color={color}
-    fontFamily='Inter'
-    {...rest}
-    >
-     {children}   
-    </MuiTypography>
-  )
-}
+    <ThemeProvider theme={theme}>
+      <MuiTypography
+        variant={variant}
+        align={align}
+        color={color}
+        gutterBottom={gutterBottom}
+        fontFamily="Inter"
+        {...rest}
+      >
+        {children}
+      </MuiTypography>
+    </ThemeProvider>
+  );
+};
 
-export default Typography
+export default Typography;

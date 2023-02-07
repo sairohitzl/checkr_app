@@ -1,25 +1,41 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridFilterModel, GridLinkOperator } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import theme from "../../../theme/theme";
 import CandidateType from "../../../utils/candidate";
 import Typography from "../../Atoms/Typography";
 import CustomTag from "../../Molecules/CustomTag";
 import CustomTableHeader from "../CustomTableHeader";
 import CustomTableFooter from "../CustomTableFooter";
-import { candidatesTableList } from "../../../utils/constants";
-import { headerNames, headerVals } from "../../../utils/constants";
+import {
+  candidatesTableList,
+  headerNames,
+  headerVals,
+} from "../../../utils/constants";
+import { getCandidates } from "../../../utils/service";
 
-const CandidateTable = () => {
+type CandidateTableProps = {
+  navigate?: NavigateFunction;
+};
+
+const CandidateTable = (props: CandidateTableProps) => {
+  // const navigate = props.navigate!;
+  const navigate = useNavigate();
   const [pageSize, setPageSize] = React.useState<number>(10);
   const [candidatesList, setcandidatesList] = useState<CandidateType[]>([]);
+
+  const handleNavigate = (id: any) => {
+    if (id != null) {
+      navigate("/candidateDetails/" + id);
+    }
+  };
   useEffect(() => {
-    setcandidatesList(candidatesTableList);
+    getCandidates().then((res) => setcandidatesList(res));
   }, []);
 
   return (
-    <Box sx={{ height: "700px", width: "100%" }}>
+    <Box sx={{ height: "90vh", width: "77vw" }}>
       <DataGrid
         sx={{
           backgroundColor: theme.palette.other.white,
@@ -39,11 +55,12 @@ const CandidateTable = () => {
         }}
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        hideFooterPagination
         columns={[
           {
-            field: headerVals[0],
-            headerName: headerNames.name,
-            width: 220,
+            field: "name",
+            headerName: "NAME",
+            width: 150,
             sortable: false,
             disableColumnMenu: true,
             renderHeader(params) {
@@ -51,6 +68,7 @@ const CandidateTable = () => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
@@ -58,9 +76,15 @@ const CandidateTable = () => {
             },
             renderCell(params) {
               return (
-                <Box sx={{ cursor: "pointer" }} onClick={() => {}}>
+                <Box
+                  sx={{ cursor: "pointer" }}
+                  onClick={() => {
+                    handleNavigate(params.id);
+                  }}
+                >
                   <Typography
                     variant="body2"
+                    fontWeight={400}
                     color={theme.palette.primary["500"]}
                   >
                     {params.value.toString()}
@@ -80,6 +104,7 @@ const CandidateTable = () => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
@@ -132,13 +157,18 @@ const CandidateTable = () => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
               );
             },
             renderCell(params) {
-              return <Typography>{params.value}</Typography>;
+              return (
+                <Typography fontWeight={400} variant="body2">
+                  {params.value}
+                </Typography>
+              );
             },
           },
           {
@@ -154,13 +184,18 @@ const CandidateTable = () => {
                 <Typography
                   variant="caption1"
                   color={theme.palette.text.secondary}
+                  fontWeight="400"
                 >
                   {params.field.toUpperCase()}
                 </Typography>
               );
             },
             renderCell(params) {
-              return <Typography>{params.value}</Typography>;
+              return (
+                <Typography fontWeight={400} variant="body2">
+                  {params.value}
+                </Typography>
+              );
             },
           },
         ]}

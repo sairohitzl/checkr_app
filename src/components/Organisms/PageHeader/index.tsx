@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import ButtonElement, { ButtonProps } from "../../Atoms/Button";
 import MyIcon from "../../Atoms/MyIcon";
 import Typography from "../../Atoms/Typography";
@@ -13,15 +13,21 @@ export type PageHeaderProps = {
   actions?: Array<JSX.Element>;
   leading?: boolean;
   leadingClick?: string;
+  navigate?: NavigateFunction;
 };
 
 const PageHeader = (props: PageHeaderProps) => {
-  const { title, actions, leading, leadingClick } = props;
+  const { title, actions, leading, leadingClick, navigate } = props;
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         {leading! && (
-          <Box sx={{ paddingRight: "10px", cursor: "pointer" }}>
+          <Box
+            sx={{ paddingRight: "10px", cursor: "pointer" }}
+            onClick={() => {
+              navigate!(leadingClick!);
+            }}
+          >
             <MyIcon icon="backArrow" />
           </Box>
         )}

@@ -1,15 +1,12 @@
 import { Box, Divider, Stack } from "@mui/material";
-import {
-  GridFilterModel,
-  GridLinkOperator,
-  useGridApiContext,
-} from "@mui/x-data-grid";
+import { GridFilterModel } from "@mui/x-data-grid";
 import { count } from "console";
 import React, { useEffect, useState } from "react";
 import { Item } from "semantic-ui-react";
 import theme from "../../../theme/theme";
 import CheckBox from "../../Atoms/Checkbox";
 import Typography from "../../Atoms/Typography";
+import CheckboxText from "../../Molecules/CheckboxText";
 
 type FilterMenuProps = {
   setFilter: (
@@ -29,12 +26,16 @@ type FilterMenuProps = {
 };
 
 const FilterMenu = (props: FilterMenuProps) => {
-  const [filterOptions1, setFilterOptions1] = useState([
+  const [filterOptions1, setFilterOptions1] = useState<
+    { text: string; checked: boolean }[]
+  >([
     { text: "All Status", checked: false },
     { text: "Clear", checked: false },
     { text: "Consider", checked: false },
   ]);
-  const [filterOptions2, setFilterOptions2] = useState([
+  const [filterOptions2, setFilterOptions2] = useState<
+    { text: string; checked: boolean }[]
+  >([
     { text: "All", checked: false },
     { text: "Engage", checked: false },
     { text: "Adverse action", checked: false },
@@ -45,6 +46,7 @@ const FilterMenu = (props: FilterMenuProps) => {
   useEffect(() => {
     applyFilter();
   }, [finalFilter]);
+
   const handleChangeFilterVal1 = (id: number) => {
     filterOptions1.map((item) => {
       item.checked = false;
@@ -65,6 +67,7 @@ const FilterMenu = (props: FilterMenuProps) => {
       ],
     });
   };
+
   const handleChangeFilterVal2 = (id: number) => {
     filterOptions2.map((item) => {
       item.checked = false;
@@ -103,7 +106,7 @@ const FilterMenu = (props: FilterMenuProps) => {
         </Typography>
       </Box>
       <Divider />
-      <Stack padding={"16px"} rowGap={1}>
+      <Stack padding={"20px"} rowGap={1}>
         <Typography
           variant="body1"
           fontWeight={"bold"}
@@ -112,7 +115,7 @@ const FilterMenu = (props: FilterMenuProps) => {
           Status
         </Typography>
         {filterOptions1.map((item, index) => (
-          <Stack direction={"row"} columnGap={1}>
+          <Stack direction={"row"} alignItems={"center"} columnGap={1}>
             <Item>
               <CheckBox
                 checked={item.checked}
@@ -136,7 +139,7 @@ const FilterMenu = (props: FilterMenuProps) => {
           Adjudication
         </Typography>
         {filterOptions2.map((item, index) => (
-          <Stack direction={"row"} columnGap={1}>
+          <Stack direction={"row"} alignItems={"center"} columnGap={1}>
             <Item>
               <CheckBox
                 checked={item.checked}

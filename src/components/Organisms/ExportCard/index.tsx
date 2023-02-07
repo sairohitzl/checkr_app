@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dialog,
-  Stack,
   TextField,
   Divider,
   Grid,
@@ -11,12 +10,12 @@ import {
 import Typography from "../../Atoms/Typography";
 import theme from "../../../theme/theme";
 import ButtonElement from "../../Atoms/Button";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import dayjs, { Dayjs } from "dayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { ThemeProvider, width } from "@mui/system";
+import { ThemeProvider } from "@mui/system";
 import MyIcon from "../../Atoms/MyIcon";
+import { getCandidates } from "../../../utils/service";
+import { CSVLink } from "react-csv";
+import CandidateType from "../../../utils/candidate";
 
 type ExportCardProps = {
   open: boolean;
@@ -24,18 +23,45 @@ type ExportCardProps = {
 };
 
 const ExportCard = (props: ExportCardProps) => {
+  const [candidateList, setcandidatesList] = useState<CandidateType[]>([]);
+  const [fCandidateList, setfCandidateList] = useState<CandidateType[]>([]);
+
+  useEffect(() => {
+    getCandidates().then((res) => {
+      setcandidatesList(res);
+      setfCandidateList(res);
+    });
+  }, []);
+
   const [value1, setValue1] = React.useState<Dayjs | null>(
     dayjs("2016-07-18T21:08:54")
   );
   const [value2, setValue2] = React.useState<Dayjs | null>(
     dayjs("2016-07-18T21:08:54")
   );
-  const handleChange1 = (newValue: Dayjs | null) => {
-    setValue1(newValue);
+  const handleChange1 = (newValue: string) => {
+    setValue1(dayjs(newValue, "yyyy-mm-dd"));
+
+    const filteredCandidateList = checkDateRange(newValue, value2!.toString());
+
+    setfCandidateList([...filteredCandidateList]);
   };
-  const handleChange2 = (newValue: Dayjs | null) => {
-    setValue2(newValue);
+  const handleChange2 = (newValue: string) => {
+    setValue2(dayjs(newValue, "yyyy-mm-dd"));
+
+    const filteredCandidateList = checkDateRange(value1!.toString(), newValue);
+
+    setfCandidateList([...filteredCandidateList]);
   };
+
+  const checkDateRange = (date1: string, date2: string) => {
+    return candidateList.filter(
+      (value) =>
+        dayjs(value.date, "yyyy/mm/dd").diff(dayjs(date1, "yyyy-mm-dd")) >= 0 &&
+        dayjs(value.date, "yyyy/mm/dd").diff(dayjs(date2, "yyyy-mm-dd")) <= 0
+    );
+  };
+
   return (
     <Dialog
       open={props.open}
@@ -77,6 +103,9 @@ const ExportCard = (props: ExportCardProps) => {
                 size="small"
                 fullWidth
                 defaultValue={"2017-05-24"}
+                onChange={(event) => {
+                  handleChange1(event.target.value);
+                }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -99,6 +128,9 @@ const ExportCard = (props: ExportCardProps) => {
                 size="small"
                 defaultValue={"2017-05-24"}
                 fullWidth
+                onChange={(event) => {
+                  handleChange2(event.target.value);
+                }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -121,11 +153,13 @@ const ExportCard = (props: ExportCardProps) => {
               justifyContent: "flex-end",
             }}
           >
-            <ButtonElement
-              label={"Export Report"}
-              variant={"primary"}
-              onClick={props.handleClose}
-            />
+            <CSVLink data={fCandidateList}>
+              <ButtonElement
+                label={"Export Report"}
+                variant={"primary"}
+                onClick={props.handleClose}
+              />
+            </CSVLink>
           </Box>
         </Box>
       </ThemeProvider>
