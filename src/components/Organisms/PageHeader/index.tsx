@@ -1,12 +1,9 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { NavigateFunction, useNavigate } from "react-router-dom";
-import ButtonElement, { ButtonProps } from "../../Atoms/Button";
+import { NavigateFunction } from "react-router-dom";
+
 import MyIcon from "../../Atoms/MyIcon";
 import Typography from "../../Atoms/Typography";
-import IconTextButton, {
-  IconTextButtonProps,
-} from "../../Molecules/IconTextButton";
 
 export type PageHeaderProps = {
   title: string;

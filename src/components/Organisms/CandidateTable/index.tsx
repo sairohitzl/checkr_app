@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { DataGrid, GridFilterModel, GridLinkOperator } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import theme from "../../../theme/theme";
@@ -8,11 +8,7 @@ import Typography from "../../Atoms/Typography";
 import CustomTag from "../../Molecules/CustomTag";
 import CustomTableHeader from "../CustomTableHeader";
 import CustomTableFooter from "../CustomTableFooter";
-import {
-  candidatesTableList,
-  headerNames,
-  headerVals,
-} from "../../../utils/constants";
+import { headerNames, headerVals } from "../../../utils/constants";
 import { getCandidates } from "../../../utils/service";
 
 type CandidateTableProps = {

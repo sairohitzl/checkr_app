@@ -1,12 +1,11 @@
 import { Box, Divider, Stack } from "@mui/material";
 import { GridFilterModel } from "@mui/x-data-grid";
-import { count } from "console";
+
 import React, { useEffect, useState } from "react";
 import { Item } from "semantic-ui-react";
 import theme from "../../../theme/theme";
 import CheckBox from "../../Atoms/Checkbox";
 import Typography from "../../Atoms/Typography";
-import CheckboxText from "../../Molecules/CheckboxText";
 
 type FilterMenuProps = {
   setFilter: (

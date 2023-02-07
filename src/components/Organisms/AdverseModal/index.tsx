@@ -1,11 +1,11 @@
-import { Box, Grid, Stack, Divider, Dialog } from "@mui/material";
+import { Box, Divider, Dialog } from "@mui/material";
 import React from "react";
 import theme from "../../../theme/theme";
 import ButtonElement from "../../Atoms/Button";
 import Typography from "../../Atoms/Typography";
 import MyIcon from "../../Atoms/MyIcon";
 import CandidateType from "../../../utils/candidate";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 import { setAdverseAction } from "../../../utils/service";
 
 import { adverseModalStrings } from "../../../utils/constants";

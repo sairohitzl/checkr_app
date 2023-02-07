@@ -31,7 +31,7 @@ const IconButton = (props: Props) => {
       <MyIcon
         icon={icon}
         colour={
-          variant == "secondary"
+          variant === "secondary"
             ? theme.palette.text.secondary
             : theme.palette.text.disabled
         }

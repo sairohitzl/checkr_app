@@ -1,5 +1,5 @@
 import MailTemplate from ".";
-import React, { useRef } from "react";
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { candidatesTableList } from "../../../utils/constants";
 

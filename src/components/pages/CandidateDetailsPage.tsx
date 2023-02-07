@@ -4,7 +4,6 @@ import CandidateType from "../../utils/candidate";
 import {
   candidateDetailsToDropdown,
   candidateDetailsToReports,
-  getCandidates,
   setEngage,
 } from "../../utils/service";
 import { UserInfoProps } from "../Molecules/UserInfo";

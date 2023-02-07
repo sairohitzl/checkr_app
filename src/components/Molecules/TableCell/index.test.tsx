@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import CustomTableCell from ".";
-import theme from "../../../theme/theme";
 
 describe("table cell test", () => {
   it("render button", () => {

@@ -1,16 +1,16 @@
-import { Box, Divider, Grid, Modal, Paper } from "@mui/material";
+import { Divider, Grid, Paper } from "@mui/material";
 import { Stack } from "@mui/system";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Item } from "semantic-ui-react";
 import theme from "../../../theme/theme";
 import CandidateType from "../../../utils/candidate";
 import ButtonElement from "../../Atoms/Button";
-import CheckBox from "../../Atoms/Checkbox";
+
 import Typography from "../../Atoms/Typography";
 import AdverseModal from "../AdverseModal";
 import CheckboxText from "../../Molecules/CheckboxText";
 import { NavigateFunction } from "react-router-dom";
-import { adverseCharges } from "../../../utils/constants";
+
 import { adverseModalStrings } from "../../../utils/constants";
 
 type MailTemplateProps = {

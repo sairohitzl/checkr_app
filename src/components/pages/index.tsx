@@ -7,8 +7,6 @@ import IconTextButton from "../Molecules/IconTextButton";
 import CandidateTable from "../Organisms/CandidateTable";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import ExportCard from "../Organisms/ExportCard";
-import { CSVLink, CSVDownload } from "react-csv";
-import { getCandidates } from "../../utils/service";
 
 const CandidatesPage = () => {
   let navigate: NavigateFunction = useNavigate();

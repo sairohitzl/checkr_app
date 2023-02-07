@@ -12,14 +12,7 @@ export default {
 const Template: ComponentStory<typeof PageHeader> = (args) => (
   <PageHeader {...args} />
 );
-// export const Basic = Template.bind({});
-// Basic.args = { title: "Candidates" };
-// export const WithLeading = Template.bind({});
-// WithLeading.args = {
-//   leading: true,
-//   title: "Candidates",
 
-// };
 export const WithActions = Template.bind({});
 WithActions.args = {
   title: "Candidates",
