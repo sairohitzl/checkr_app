@@ -10,7 +10,7 @@ describe("Chip tests", () => {
     const chip = screen.getByText("CLEAR");
     expect(chip).toBeInTheDocument();
     expect(chip).toHaveStyle(
-      `padding:'4px 12px',border-radius:'4px', background-color: ${theme.palette.accent.lightGreen}`
+      `padding:'4px 12px',border-radius:'4px', background-color: rgb(242, 244, 252)`
     );
   });
   it("render ENGAGE chip", () => {
@@ -18,7 +18,7 @@ describe("Chip tests", () => {
     const chip = screen.getByText("ENGAGE");
     expect(chip).toBeInTheDocument();
     expect(chip).toHaveStyle(
-      `padding:'4px 12px',border-radius:'4px', background-color: ${theme.palette.accent.lightBlue}`
+      `padding:'4px 12px',border-radius:'4px', background-color: rgb(160, 136, 23)`
     );
   });
 });
