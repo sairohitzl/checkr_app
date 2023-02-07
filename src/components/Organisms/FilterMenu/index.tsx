@@ -48,7 +48,10 @@ const FilterMenu = (props: FilterMenuProps) => {
   }, [finalFilter]);
 
   const handleChangeFilterVal1 = (id: number) => {
-    filterOptions1.map((item) => {
+    // filterOptions1.map((item) => {
+    //   item.checked = false;
+    // });
+    filterOptions1.forEach((item) => {
       item.checked = false;
     });
     filterOptions1[id].checked = true;
@@ -69,7 +72,10 @@ const FilterMenu = (props: FilterMenuProps) => {
   };
 
   const handleChangeFilterVal2 = (id: number) => {
-    filterOptions2.map((item) => {
+    // filterOptions2.map((item) => {
+    //   item.checked = false;
+    // });
+    filterOptions2.forEach((item) => {
       item.checked = false;
     });
     filterOptions2[id].checked = true;
