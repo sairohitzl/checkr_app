@@ -13,7 +13,8 @@ export default {
 const Template: ComponentStory<typeof MyIcon> = (args) => <MyIcon {...args} />;
 
 export const DashBoardIcon = Template.bind({})
-DashBoardIcon.args = {icon: 'dashboard',colour:'primary'}
+DashBoardIcon.args = {icon: 'dashboard',colour:'#224dff'} // HEX:
+
 
 export const candidatesIcon = Template.bind({})
 candidatesIcon.args = 
@@ -92,7 +93,7 @@ export const packageIcon = Template.bind({})
 packageIcon.args = {icon: 'package',colour:'primary'}
 
 export const uparrowIcon = Template.bind({})
-uparrowIcon.args = {icon: 'uparrow',colour:'primary'}
+uparrowIcon.args = {icon: 'upArrow',colour:'primary'}
 
 export const clockIcon = Template.bind({})
 clockIcon.args = {icon: 'clock',colour:'primary'}
