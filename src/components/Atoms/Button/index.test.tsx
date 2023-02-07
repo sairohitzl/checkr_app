@@ -9,5 +9,6 @@ describe("Button test", () => {
     const button = screen.getByText("add");
     expect(button).toBeInTheDocument();
     expect(button).toHaveStyle("background-color: '#224DFF' ");
+    expect(button).toHaveTextContent("add");
   });
 });
