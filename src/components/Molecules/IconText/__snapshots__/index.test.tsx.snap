@@ -5,7 +5,7 @@ exports[`Testing IconText Snapshots 1`] = `
   className="MuiBox-root css-0"
   onClick={[Function]}
   style={
-    Object {
+    {
       "alignItems": "center",
       "background": "#EFF2FF",
       "borderRadius": "6px",
@@ -28,7 +28,7 @@ exports[`Testing IconText Snapshots 1`] = `
   </svg>
   <span
     style={
-      Object {
+      {
         "color": "#3E5FE2",
         "paddingLeft": "10px",
       }
