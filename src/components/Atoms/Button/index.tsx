@@ -39,7 +39,7 @@ const ButtonElement = (props: ButtonProps) => {
       <Typography
         variant="body1"
         color={
-          props.variant == "secondary"
+          props.variant === "secondary"
             ? theme.palette.text.primary
             : theme.palette.text.disabled
         }
